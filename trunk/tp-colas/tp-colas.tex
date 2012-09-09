@@ -46,5 +46,58 @@
     
     $$ L_c = \frac{\lambda^2}{\mu(\mu - \lambda)} = \frac{24^2h^{-2}}{30h^{-1}(30h^{-1}-24h^{-1})} = \frac{576h^{-1}}{30 \cdot 6h^{-1}} = \frac{576}{180} = \frac{16}{5} = 3.2 $$
 
+\paragraph{Ejercicio 2}
+    El sistema en cuestión es similar al anterior, puede modelarse como P/P/1 con las mismas hipótesis. Los datos son $ \lambda = 4h^{-1} $, $ t_s = 6min \Rightarrow \mu = \frac{1}{6min} \; \frac{60min}{h} = 10h^{-1} $.
+    
+    \paragraph{2.a.} Corresponde a la probabilidad de que no haya clientes en el sistema, siendo para P/P/1:
+    
+    $$ p(0) = 1 - \rho = 1 - \frac{\lambda}{\mu} = 1 - \frac{4h^{-1}}{10h^{-1}} = 1 - \frac{2}{5} = \frac{3}{5} = 0.6 $$
+    
+    \paragraph{2.b.} 
+    $$ p(3) = \rho^{3}p(0) = \left( \frac{\lambda}{\mu} \right)^{3} \frac{3}{5} = \left( \frac{2}{5} \right)^{3} \frac{3}{5} = \frac{8\cdot3}{125\cdot5} = \frac{24}{625} = 0.0384 $$
+    
+    \paragraph{2.c.} La probabilidad de encontrar al menos un cliente en el taller es la probabilidad de que haya entre uno e infinitos clientes: $ \sum _{n=1}^{\infty} {p(n)} $. Teniendo en cuenta que $ \sum _{n=0}^{\infty} {p(n)} = p(0) + \sum _{n=1}^{\infty} {p(n)} = 1 $ podemos concluir:
+     
+     $$ \sum _{n=1}^{\infty} {p(n)} = 1 - p(0) = 1 - (1 - \rho) = \rho = \frac{\lambda}{\mu} = \frac{2}{5} = 0.4 $$
+    
+    \paragraph{2.d.}
+    $$ L = \frac{\lambda}{\mu - \lambda} = \frac{4h^{-1}}{10h^{-1} - 4h^{-1}} = \frac{4h^{-1}}{6h^{-1}} = \frac{2}{3} = 0.\overline{6} $$
+    
+    \paragraph{2.e.} 
+    $$ w = w_c + t_s = \frac{\lambda}{\mu(\mu - \lambda)} + 6min = \frac{4h^{-1}}{10h^{-1}(10h^{-1} - 4h^{-1})} + 6min $$
+    $$ w = \frac{4}{10\cdot6h^{-1}} + 6min = \frac{h}{15}\frac{60min}{h} + 6min = 4min + 6 min = 10min $$
+    
+    \paragraph{2.f.} Equivale a la longitud de la cola:
+    
+    $$ L_c = \frac{\lambda^2}{\mu(\mu - \lambda)} = \frac{4^2 h^{-2}}{10h^{-1}(10h^{-1} - 4h^{-1})} = \frac{16h^{-2}}{10\cdot 6h^{-2}} = \frac{4}{15} = 0.2\overline{6} $$
+    
+    \paragraph{2.g.}
+    $$ w_c = \frac{L_c}{\lambda} = \frac{4}{15} \frac{h}{4} = \frac{h}{15} \frac{60min}{h} = 4 min $$
+    
+\paragraph{Ejercicio 3}
+    Este problema también corresponde a un modelo P/P/1, ya que los tiempos entre arribos y de servicio con distribución exponencial corresponden a arribos y salidas con distribución Poisson. Se toman las mismas hipótesis que en los ejercicios anteriores. Los datos son: $ t_a = 8min $, $ t_s = 2min $.
+
+    \paragraph{3.a.} La probabilidad de que un cliente tenga que esperar es la probabilidad de que el canal esté ocupado, es decir que haya más de un cliente en el sistema:
+    
+    $$ \sum _{n=1}^{\infty} p(n) = 1 - p(0) = 1 - (1 - \rho) = \rho = \frac{\lambda}{\mu} = \frac{t_s}{t_a} = \frac{2min}{8min} = \frac{1}{4} = 0.25 $$    
+
+    \paragraph{3.b.}
+    $$ L_c = \frac{\lambda^2}{\mu(\mu - \lambda)} = \frac{\frac{1}{8^{2}} min^{-2}}{\frac{1}{2} min^{-1} \left( \frac{1}{2} - \frac{1}{8} \right) min^{-1}} $$
+    $$ L_c = \frac{1}{64} :   \left( \frac{1}{2} \cdot \frac{3}{8} \right) = \frac{1}{64} \cdot \frac{16}{3} = \frac{1}{12} = 0.08\overline{3} $$
+
+    \paragraph{3.c.} Para averiguar la velocidad promedio de arribos $ \overline \lambda $ que resultaría en tiempos de espera en la cola mayores a 4 minutos, se debe despejar dicha variable de la fórmula de espera promedio en la cola. En el modelo P/P/1 se cumple que $ \lambda = \overline \lambda $, por lo tanto:
+    
+    $$ w_c = \frac{\lambda}{\mu(\mu - \lambda)} > 4 min $$
+
+    Aplicando la función monótonamente decreciente $ f(x) = x^{-1} $ resulta:
+
+    $$ \frac{\mu(\mu - \lambda)}{\lambda} < \frac{1}{4min} \Rightarrow \mu(\mu - \lambda) < \frac{\lambda}{4min} $$
+    $$ \mu^2 - \mu \lambda < \frac{\lambda}{4min} \Rightarrow \mu^2 < \lambda \left( \frac{1}{4min} + \mu \right) $$
+    $$ \frac{\mu^2}{\frac{1}{4min} + \mu} < \lambda \Rightarrow \frac{\left( \frac{1}{2min} \right)^2}{\frac{1}{4min} + \frac{1}{2min}} < \lambda $$
+    $$ \frac{1}{4min} \cdot \frac{4}{3} < \lambda $$
+    $$ \frac{1}{3min} < \lambda $$
+    
+    La velocidad promedio de arribos para que la espera supere los 4 minutos debería ser al menos de un cliente cada 3 minutos.
+    
 \end{document}
 
