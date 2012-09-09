@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc}
+
+\title{Trabajo Práctico 1\\Teoría de Colas}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\paragraph{Ejercicio 1}
+    El modelo elegido para este sistema es P/P/1. Las distribuciones Poisson de los arribos y las salidas concuerdan con las de este modelo, y además se explicita que no hay impaciencia. Se asumen también las siguientes hipótesis:
+    \begin{itemize}
+        \item El tipo de arribo responde a distribución Poisson; es dato.
+        \item El tipo de proceso de servicio responde a distribución Poisson; también es dato, ya que el tiempo de servicio tiene distribución exponencial. 
+        \item Un único canal de atención; es dato.
+        \item Sistema de capacidad infinita.
+        \item Disciplina de atención FIFO.
+        \item Población infinita.
+        \item Cola única.
+        \item Población sin impaciencia; es dato.
+        \item Sistema en régimen permanente.
+    \end{itemize}
+    
+    Los datos proporcionados son la velocidad de ingreso $ \lambda = 24/h $ y el tiempo promedio de atención $ t_s = 2 min $, a partir del cual podemos calcular la tasa de atención $ \mu = \frac{1}{t_s} = \frac{1}{2min} \; \frac{60min}{h} = \frac{30}{h} $.
+
+    \paragraph{1.a.} El número promedio de clientes en la sección de sastrería equivale a la cantidad de clientes en nuestro sistema, $ L $. De la combinación de la tabla de estados y la ecuación de estado para un sistema P/P/1 se obtiene la siguiente expresión para $ L $:
+
+    $$ L = \frac{\lambda}{\mu - \lambda} = \frac{24 h^{-1}}{30 h^{-1} - 24 h^{-1}} = \frac{24}{6} = 4 $$
+
+    \paragraph{1.b.} Equivale al tiempo promedio de permanencia en el sistema de un cliente. Puede obtenerse como el tiempo de permanencia en la cola más el tiempo de atención del cliente:
+    
+    $$ w = w_c + t_s = \frac{L_c}{\bar\lambda} + t_s = \frac{\lambda^2}{\lambda\mu(\mu-\lambda)} + t_s = \frac{\lambda}{\mu(\mu-\lambda)} + t_s $$
+    $$ w = \frac{\lambda}{\mu(\mu-\lambda)} + t_s = \frac{24 h^{-1}}{30 h^{-1}(30 h^{-1} - 24 h^{-1})} + 2 min = \frac{24 h^{-1}}{30 h^{-1} \; 6 h^{-1}} + 2 min $$
+    $$ w = \frac{2}{15} h \; \frac{60min}{h} + 2 min = 8 min + 2 min $$
+    $$ w = 10 min $$
+
+    \paragraph{1.c.} Corresponde a la probabilidad de que no haya clientes en el sistema, siendo para P/P/1:
+    
+    $$ p(0) = 1 - \rho = 1 - \frac{\lambda}{\mu} = 1 - \frac{24h^{-1}}{30h^{-1}} = 1 - \frac{4}{5} = \frac{1}{5} = 0.2 $$
+    
+    \paragraph{1.d.} Lo que se pide es el número promedio de clientes en la cola:
+    
+    $$ L_c = \frac{\lambda^2}{\mu(\mu - \lambda)} = \frac{24^2h^{-2}}{30h^{-1}(30h^{-1}-24h^{-1})} = \frac{576h^{-1}}{30 \cdot 6h^{-1}} = \frac{576}{180} = \frac{16}{5} = 3.2 $$
+
+\end{document}
+
