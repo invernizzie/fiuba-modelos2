@@ -8,9 +8,12 @@
 \author{}
 \date{\today}
 
+%%% Agregar integrantes del grupo %%%
+
 \begin{document}
 \maketitle
 
+%%%% Poner el enunciado aca.. y un indice %%%%
 \paragraph{Ejercicio 1}
     El modelo elegido para este sistema es P/P/1. Las distribuciones Poisson de los arribos y las salidas concuerdan con las de este modelo, y además se explicita que no hay impaciencia. Se asumen también las siguientes hipótesis:
     \begin{itemize}
@@ -99,5 +102,48 @@
     
     La velocidad promedio de arribos para que la espera supere los 4 minutos debería ser al menos de un cliente cada 3 minutos.
     
+    
+    
+\paragraph{Ejercicio 6}
+    Se puede modelar la peluquería como un P/P/M con M=2, ya que ambos peluqueros atienden en paralelo. Si bien el sistema es ilimitado, los clientes son impacientes con lo cual hay un número finito de estados posibles.
+    La siguiente tabla describe al sistema:
+    \begin{center}
+    \begin{tabular}{|| c | c | c | c | c | c | c | c ||}
+    \hline 
+     n & P(n) & $\lambda_n$ & $\mu_n$ & $L_n$& $L_cn$ & $H_n$ & $R_n$ \\ \hline \hline
+     0 & P(0) & $\lambda$   & 0       & 0    & 0      & 0     & 0	\\ \hline
+     1 & P(1) & $\lambda$   & $\mu$   & 1    & 0      & 1     & 0	\\ \hline
+     2 & P(2) & $\lambda$   & 2$\mu$  & 2    & 0      & 2     & 0	\\ \hline
+     3 & P(3) & $\lambda$/2 & 2$\mu$  & 3    & 1      & 2     & $\lambda$/2 \\ \hline
+     4 & P(4) & 0           & 2$\mu$  & 4    & 2      & 2     & $\lambda$   \\ \hline  
+     
+    \end{tabular}
+    \end{center}
+    \underline{Datos:} \\
+    $$t_s = 0,5 h/cl  \Rightarrow \mu = 2 cl/h $$
+    $$\lambda = 5 cl/h $$
+    
+    \paragraph{6.a.} La probabilidad de que no haya clientes en la peluquería es P(0). Para eso, se calcurarán todas las probabilidades a partir de la tabla.
+    
+    \paragraph{6.b.} La probabilidad de que haya clientes esperando se relaciona con la probabilidad de los estados 3 y 4. \\
+    $$P(3) + P(4) = ..$$
+    
+    \paragraph{6.c.} El porcentaje de ocupación de cada peluquero (o canal) es: \\
+    $$\frac{H}{M} = \frac{H}{2} = $$
+    
+    \paragraph{6.d.} La cantidad promedio de clientes esperando se obtiene mediante $L_c$
+    
+    \paragraph{6.e.} La cantidad promedio de clientes que no ingresan es igual al rechazo R.
+    
+    \paragraph{6.f.} Para obtener el ingreso por hora, se debe calcular la cantidad de clientes atendidos por hora, es decir $\mu$.\\
+    Se sabe que la cantidad de clientes atendidos es igual a la cantidad de clientes que efectivamente ingresan, entonces \\
+  %%  \overline{\mu} = \bar{\lamda} = \lamda - R
+  
+    ... TO BE CONTINUED ...
+
+\paragraph{Ejercicio 7}
+
+
+
 \end{document}
 
