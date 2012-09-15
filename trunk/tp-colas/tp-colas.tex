@@ -200,12 +200,12 @@
       $$\Rightarrow p(n) = p(0) (\frac{\lambda + 0.1 \mu}{\mu})^n \lambda / \mu$$
 
    Dado que, para cualquier distribución de probabilidades discreta:
-      $$\sum_{n=0}^{\inf} p(n) = 1$$
+      $$\sum_{n=0}^{+\infty} p(n) = 1$$
 
    Puede obtenerse la siguiente expresión:
-      $$\sum_{n=0}^{\inf} p(n) = 1 = p(0) + p(1) + \sum_{n=2}^{\inf} p(n)$$
-      $$1 = p(0) + p(0) \lambda / \mu + \sum_{n=2}^{\inf} p(0) (\frac{\lambda + 0.1 \mu}{\mu})^{n-2} \lambda / \mu$$
-      $$1 = p(0) + p(0) \lambda / \mu + p(0) \lambda / \mu \sum_{n=0}^{\inf} (\frac{\lambda + 0.1 \mu}{\mu})^n$$
+      $$\sum_{n=0}^{+\infty} p(n) = 1 = p(0) + p(1) + \sum_{n=2}^{+\infty} p(n)$$
+      $$1 = p(0) + p(0) \lambda / \mu + \sum_{n=2}^{+\infty} p(0) (\frac{\lambda + 0.1 \mu}{\mu})^{n-2} \lambda / \mu$$
+      $$1 = p(0) + p(0) \lambda / \mu + p(0) \lambda / \mu \sum_{n=0}^{+\infty} (\frac{\lambda + 0.1 \mu}{\mu})^n$$
 
    Dado que $\frac{\lambda + 0.1 \mu}{\mu} < 1$
       $$1 = p(0) + p(0) \lambda / \mu + p(0) \lambda / \mu (\frac{1}{1 - \frac{\lambda + 0.1\mu}{\mu}})$$
@@ -215,27 +215,27 @@
       $$1 = p(0) [1 + 8/10 + 8/10 (\frac{1}{1 - 9/10})] = 9.8 p(0)$$
       $$\Rightarrow p(0) = 10 / 98 \simeq 0.10204$$
 
-   \paragraph{8.a.} La cantidad promedio de clientes en la cola es $L_{craya}$.
-      $$L_{craya} = L_{raya} - (1 - P(0))$$
-      $$L_{raya} = \sum_{n=0}^{\inf} n p(n) = 0 p(0) + 1 p(1) + \sum_{n=2}^{\inf} n p(n)$$
-      $$... = 8/10 p(0) + \sum_{n=1}^{\inf} n p(0) (\frac{\lambda + 0.1 \mu}{\mu})^n$$
+   \paragraph{8.a.} La cantidad promedio de clientes en la cola es $ \overline{L_{c}}$.
+      $$ \overline{L_{c}} = \overline{L} - (1 - P(0))$$
+      $$\overline{L} = \sum_{n=0}^{+\infty} n p(n) = 0 p(0) + 1 p(1) + \sum_{n=2}^{+\infty} n p(n)$$
+      $$... = 8/10 p(0) + \sum_{n=1}^{+\infty} n p(0) (\frac{\lambda + 0.1 \mu}{\mu})^n$$
 
-      Sabiendo que, $\rho < 1 \Rightarrow \sum_{n=0}^{\inf} n \rho^n = \frac{\rho}{(1- \rho)^2}$
+      Sabiendo que, $\rho < 1 \Rightarrow \sum_{n=0}^{+\infty} n \rho^n = \frac{\rho}{(1- \rho)^2}$
       $$L_{raya} = 8/10 p(0) + p(0) \frac{\frac{\lambda + 0.1 \mu}{\mu}}{(1 - \frac{\lambda + 0.1 \mu}{\mu})^2}$$
       $$... = 8/10 p(0) + p(0) \frac{9/10}{1/10^2}$$
       $$... = 8/10 p(0) + p(0) 90$$
       $$... = 8/10 (10/98) + (10/98) 90$$
-      $$\Rightarrow L_{raya} \simeq 9.265$$
+      $$\Rightarrow \overline{L} \simeq 9.265$$
 
-      Por lo tanto: $L_{craya} \simeq 9.265 - (1-10/98) \simeq 8.3673$ clientes.
+      Por lo tanto: $\overline{L_{c}} \simeq 9.265 - (1-10/98) \simeq 8.3673$ clientes.
 
 
    \paragraph{8.b.} El tiempo promedio de permanencia de un cliente en la cola es $W_c$.
-      $$W_c = \frac{L_c}{\lambda_{raya}}$$
-      $$\lambda_{raya} = \sum_{n=0}^{\inf} \lambda_n p(n) = p(0) \lambda + \sum_{n=1}^{\inf} p(n) (\lambda + 0.1 \mu) $$
+      $$W_c = \frac{L_c}{\overline{\lambda}}$$
+      $$\overline{\lambda} = \sum_{n=0}^{+\infty} \lambda_n p(n) = p(0) \lambda + \sum_{n=1}^{+\infty} p(n) (\lambda + 0.1 \mu) $$
       $$... = p(0) \lambda + (1 - p(0)) (\lambda + 0.1 \mu) $$
       $$... = (10/98) 8 + (88/98) 9$$
-      $$\Rightarrow \lambda_{raya} = 872/98 \simeq 8.898$$
+      $$\Rightarrow \overline{\lambda} = 872/98 \simeq 8.898$$
 
       Por lo tanto: $W_c \simeq 8.3673 / 8.898 \simeq 0.9404$ minutos.
 
@@ -245,10 +245,5 @@
    \paragraph{8.d.} La cantidad de clientes promedio en el sistema es $L$, calculado previamente, en la sección $8.a$.
       $$L = 9.265$$
 
-% TODO (mmazzei) - Reemplazar \*_{raya} por el símbolo que dibuja la barra de promedio encima del caracter.
-%       * L_{craya}      --> L_c raya
-%       * L_{raya}       --> L   raya
-%       * \lambda_{raya} --> lambda raya
-% TODO (mmazzei) - Reemplazar \inf por el símbolo que dibuja +infinito.
 \end{document}
 
