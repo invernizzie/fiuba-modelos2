@@ -245,5 +245,64 @@
    \paragraph{8.d.} La cantidad de clientes promedio en el sistema es $L$, calculado previamente, en la sección $8.a$.
       $$L = 9.265$$
 
+
+\paragraph{Ejercicio 9}
+   Para modelar el sistema presentado en este ejercicio, se plantean las siguientes hipótesis:
+
+   \begin{itemize}
+      \item Población infinita.
+      \item No hay impaciencia.
+      \item Clientes sin preferencia entre ventanillas 1 y 2 o entre 3 y 4.
+      \item En caso de $(b, b, 1, 1)$, al terminar C3 o C4, tiene prioridad el cliente de C1.
+   \end{itemize}
+
+   \paragraph{9.a.} Los estados posibles del sistema son:
+   \begin{center}
+   \begin{tabular}{|| c | c | c | c | c ||}
+   \hline 
+      n & C1 & C2 & C3 & C4 \\ \hline \hline
+      0 & 0  & 0  & 0  & 0  \\ \hline \hline
+      1 & 1  & 0  & 0  & 0  \\ \hline 
+      1 & 0  & 1  & 0  & 0  \\ \hline
+      1 & 0  & 0  & 1  & 0  \\ \hline
+      1 & 0  & 0  & 0  & 1  \\ \hline \hline
+      2 & 1  & 1  & 0  & 0  \\ \hline
+      2 & 1  & 0  & 1  & 0  \\ \hline
+      2 & 1  & 0  & 0  & 1  \\ \hline
+      2 & 0  & 1  & 1  & 0  \\ \hline
+      2 & 0  & 1  & 0  & 1  \\ \hline
+      2 & 0  & 0  & 1  & 1  \\ \hline \hline
+      3 & 1  & 1  & 1  & 0  \\ \hline
+      3 & 1  & 1  & 0  & 1  \\ \hline
+      3 & 1  & 0  & 1  & 1  \\ \hline
+      3 & b  & 0  & 1  & 1  \\ \hline
+      3 & 0  & 1  & 1  & 1  \\ \hline
+      3 & 0  & b  & 1  & 1  \\ \hline \hline
+      4 & 1  & 1  & 1  & 1  \\ \hline
+      4 & 1  & b  & 1  & 1  \\ \hline
+      4 & b  & 1  & 1  & 1  \\ \hline
+      4 & b  & b  & 1  & 1  \\ \hline
+   \end{tabular}
+   \end{center}
+
+
+   \paragraph{9.b.}
+      $$p(b,0,1,1) = p(1,0,1,1) (1 - \lambda \Delta t) (\mu_1 \Delta t) (1 - \mu_3 \Delta t) (1 - \mu_4 \Delta t)$$
+      $$           + p(b,0,1,1) (1 - \lambda \Delta t) (1 - \mu_3 \Delta t) (1 - \mu_4 \Delta t)$$
+
+   \paragraph{9.c.}
+      $$p(0,0,1,1) = p(1,0,1,0) (1 - \lambda \Delta t) (\mu_1 \Delta t) (1 - \mu_3 \Delta t)$$
+      $$           + p(1,0,0,1) (1 - \lambda \Delta t) (\mu_1 \Delta t) (1 - \mu_4 \Delta t)$$
+      $$           + p(0,1,1,0) (1 - \lambda \Delta t) (\mu_2 \Delta t) (1 - \mu_3 \Delta t)$$
+      $$           + p(0,1,0,1) (1 - \lambda \Delta t) (\mu_2 \Delta t) (1 - \mu_4 \Delta t)$$
+      $$           + p(0,0,1,1) (1 - \lambda \Delta t) (1 - \mu_3 \Delta t) (1 - \mu_4 \Delta t)$$
+      $$           + p(b,0,1,1) (1 - \lambda \Delta t) [\mu_3 \Delta t + \mu_4 \Delta t)]$$
+      $$           + p(0,b,1,1) (1 - \lambda \Delta t) [\mu_3 \Delta t + \mu_4 \Delta t)]$$
+
+% TODO (mmazzei) - Reemplazar \*_{raya} por el símbolo que dibuja la barra de promedio encima del caracter.
+%       * L_{craya}      --> L_c raya
+%       * L_{raya}       --> L   raya
+%       * \lambda_{raya} --> lambda raya
+% TODO (mmazzei) - Reemplazar \inf por el símbolo que dibuja +infinito.
 \end{document}
 
