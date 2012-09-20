@@ -152,20 +152,112 @@
     Con lo cual el porcentaje de ocupación es 1,65.    
     
     \paragraph{6.d.} La cantidad promedio de clientes esperando se obtiene mediante $L_c$.
-    $$L_c = \sum_{n=0}^{4}L_c(n) p(n) = 1 p(3) + 2 p(4) = \frac{2250}{3321} \simeq 0,68 $$
+    $$L_c = \sum_{n=0}^{4}L_c(n) p(n) = 1 p(3) + 2 p(4) = \frac{2250}{3321} \simeq 0,68 \frac{clientes}{hora}$$
     
     
     \paragraph{6.e.} La cantidad promedio de clientes que no ingresan es igual al rechazo  $ \overline{R}$
     En este caso se puede calcular como $ \overline{R} = \lambda - \overline{\lambda}$ (Se tomará el valor de $\overline{\lambda}$ del punto siguiente.)
-    $$ \Rightarrow \overline{R} = 5 - \frac{1220}{369} \simeq 1.69$$
+    $$ \Rightarrow \overline{R} = 5 - \frac{1220}{369} \simeq 1.69 \frac{clientes}{hora}$$
     
     
     \paragraph{6.f.} Para obtener el ingreso por hora, se debe calcular la cantidad de clientes atendidos por hora, es decir $\mu$.\\
     Se sabe que la cantidad de clientes atendidos es igual a la cantidad de clientes que efectivamente ingresan, entonces \\
-    $$ \overline{\lambda} = \sum_{n=0}^{4}\lambda(n) p(n) = \lambda [ p(0)+p(1)+p(2) ] + \frac{\lambda}{2} p(3) = \frac{1220}{369} \simeq 3.31$$
+    $$ \overline{\lambda} = \sum_{n=0}^{4}\lambda(n) p(n) = \lambda [ p(0)+p(1)+p(2) ] + \frac{\lambda}{2} p(3) = \frac{1220}{369} \simeq 3.31 \frac{clientes}{hora}$$
  
 
 \paragraph{Ejercicio 7}
+  El sistema planteado se puede dividir en 3 subsistemas A,B y C como indica el gráfico del enunciado. 
+  El sistema A es un sistema P/P/1 impaciente, B es P/P/1 y C es un sistema P/P/1/2.
+  
+  Se cuenta con los siguientes datos: \\
+  $$ \lambda = 10 cl/min $$
+  $$ \mu_a = 1/t_a = 5 cl/min $$
+  $$ \mu_b = 1/t_b = 3 cl/min $$
+  $$ \mu_c = 1/t_c = 2 cl/min $$
+ 
+  Por las características del sistema, se deducen las siguientes igualdades: \\
+  $$ \overline{\lambda_a} = \overline{\mu_a}$$
+  $$ \lambda_b = \overline{\lambda_b} = 0.4 \overline{\lambda_a} = \overline{\mu_b}$$
+  $$ \lambda_c = 0.6 \overline{\lambda_a} = \overline{R_c} - \overline{\lambda_c} , \overline{\lambda_c} = \overline{\mu_c}$$
+  
+ Para los sistemas A y C se planteará una tabla y para el sistema B se utilizarán las fórmulas de PP1. \\ \\
+
+ \begin{center}
+  \underline{Sistema A} \\ 
+    \begin{tabular}{|| c | c | c | c | c | c | c | c ||}
+    \hline 
+     n & P(n) & $\lambda_n$ & $\mu_n$ & $L_n$& $L_cn$ & $H_n$ & $R_n$ 			\\ \hline \hline
+     0 & P(0) & $\lambda_a$   & 0       & 0    & 0      & 0     & 0			\\ \hline
+     1 & P(1) & $\lambda_a$/2 & $\mu_a$ & 1    & 0      & 1     & $\lambda_a$/2		\\ \hline
+     2 & P(2) & $\lambda_a$/5 & $\mu_a$ & 2    & 1      & 1     & $\frac{4\lambda_a}{5}$	\\ \hline
+     3 & P(3) &  0            & $\mu_a$ & 3    & 2      & 1     & $\lambda_a$ 		\\ \hline
+     
+    \end{tabular}
+    
+    Las probabilidades de cada estado se resuelven mediante el sistema: 
+    $$ \sum_{n=0}^{3}p(n) = 1 $$
+    $$ p(1)_a = \frac{\lambda_a}{\mu_a} p(0)_a = \frac{10}{5} p(0)_a $$
+    $$ p(2)_a = \frac{\lambda_a}{2\mu_a} p(1)_a = \frac{10}{5} p(0)_a$$
+    $$ p(3)_a = \frac{\lambda_a}{5\mu_a} p(2)_a = \frac{4}{5} p(0)_a$$
+    
+    Despejando se obtiene: 
+    $$ p(0)_a = \frac{5}{29} \simeq 0,17 $$
+    $$ p(1)_a = \frac{10}{29} \simeq 0,345 $$
+    $$ p(2)_a = \frac{10}{29} \simeq 0,345 $$
+    $$ p(3)_a = \frac{4}{29} \simeq 0,14 $$
+    
+  \end{center} 
+  
+ \begin{center}
+  \underline{Sistema C} \\ 
+    \begin{tabular}{|| c | c | c | c | c | c | c | c ||}
+    \hline 
+     n & P(n) & $\lambda_n$ & $\mu_n$ & $L_n$& $L_cn$ & $H_n$ & $R_n$ 			\\ \hline \hline
+     0 & P(0) & $0.6 \lambda_a$ & 0       & 0    & 0      & 0     & 0			\\ \hline
+     1 & P(1) & $0.6 \lambda_a$ & $\mu_c$ & 1    & 0      & 1     & 0	\\ \hline
+     2 & P(2) & 0               & $\mu_c$ & 2    & 1      & 1     & $0.6 \lambda_a$ \\ \hline
+     
+    \end{tabular}
+    
+    Las probabilidades de cada estado se resuelven mediante el sistema: 
+    $$ \sum_{n=0}^{3}p(n) = 1 $$
+    $$ p(1)_c = \frac{0.6\lambda_a}{\mu_c} p(0)_c = \frac{25}{3}p(0)_c$$
+    $$ p(2)_c = \frac{0.6\lambda_a}{2\mu_c} p(1)_c = \frac{125}{9} p(0)_c$$
+    
+    Despejando se obtiene: 
+    $$ p(0)_c = \frac{9}{209} \simeq 0,04 $$
+    $$ p(1)_c = \frac{75}{209} \simeq 0,36 $$
+    $$ p(2)_c = \frac{125}{209} \simeq 0,6 $$
+    
+  \end{center}
+  
+  \paragraph{7.a.} La cantidad promedio de clientes esperando en cada sector se obtiene mediante $\overline{L_ca}, \overline{L_cb},\overline{L_cc}$, para los sectores A,B y C respectivamente.\\
+  Para los sistemas A y C se puede calcular por definición:
+  $$\overline{L_ca} = \sum_{n=0}^{3}L_ca(n) p(n)_a = p(1)_a + 2 p(2)_a + 3 p(3)_a = \frac{42}{29} \simeq 1,45 \frac{clientes}{minuto} $$
+  $$\overline{L_cc} = \sum_{n=0}^{2}L_cc(n) p(n)_c = p(1)_c + 2 p(2)_c = \frac{325}{209} \simeq 1,56 \frac{clientes}{minuto} $$
+  
+  Para el sistema B se utiliza la fórmula para PP1 $\overline{L_c} = \frac{\rho^2}{1-\rho}$, con $\rho = \frac{0.4\overline{\lambda_a}}{\mu_b}$ utilizando las igualdades mencionadas anteriormente. Esto implica calcular $\overline{\lambda_a}$
+  $$\overline{\lambda_a} = \sum_{n=0}^{3}\lambda(n) p(n)_a = \lambda p(0)_a + \frac{\lambda}{2} p(1)_a + \frac{\lambda}{5} p(2)_a = \frac{50}{29} + \frac{50}{29} + \frac{20}{29} = \frac{120}{29} \simeq 4.14$$
+  $$\Rightarrow \rho = \frac{0.4\frac{120}{29}}{3} = \frac{16}{29} $$
+  $$\Rightarrow \overline{L_cb} = \frac{(\frac{16}{29})^2}{1-\frac{16}{29}} = \frac{256}{377} \simeq 0,68 \frac{clientes}{minuto} $$
+  
+  \paragraph{7.b.} El ingreso promedio por minuto se calcula como $\$5000 \overline{\mu_b} + \$600 \overline{\mu_c} $. Considerando las igualdades mencionadas, se puede deducir:
+  $$ \overline{\mu_b} = 0.4\overline{\lambda_a} = \frac{48}{29} \simeq 1,66 \frac{clientes}{minuto}$$ 
+  
+  Para $\overline{\mu_c}$ se debe calcular primero el rechazo en C
+  $$ \overline{R_c} = \sum_{n=0}^{2} R_c(n) p_c(n) = 0.6 \lambda_a p_c(2) =  \frac{9000}{6061} \simeq 1,49$$
+  $$\Rightarrow \overline{\lambda_c} = \lambda_c -\overline{R_c} = 0.6\overline{\lambda_a} -\overline{R_c} = \frac{72}{29} - \frac{9000}{6061} = \frac{6048}{6061} \simeq 1,0$$
+  
+  Con lo cual, el ingreso se calcula como
+  $$\$5000 \overline{\mu_b} + \$600 \overline{\mu_c} = \$5000 \frac{48}{29} + \$600 \frac{6048}{6061} = \$8.275,86 + \$598,71 = \$8.874,57 / minuto$$
+  
+  \paragraph{7.c.} La cantidad promedio de clientes que no ingresan al sistema por minuto se calcula mediante $\overline{R_a}$. 
+  \underline{Hipótesis:} se consideran sólo los clientes que son rechazados en A dado que los que son rechazados en C ya recibieron parte del servicio.
+  $$\overline{R_a} = \lambda_a -\overline{\lambda_a} = 10 - \frac{48}{29} = \frac{242}{29} \simeq 8.34 cl/min$$
+  
+  \paragraph{7.d.} La probabilidad de que el sistema esté vacío se calcula mediante las probabilidades de que cada sistema este vacío en simultáneo. 
+  Para B se utiliza la fórmula de PP1 donde $p(0) = 1-\rho = 1- \frac{16}{29} = \frac{13}{29} $
+  $$ p(0)_a . p(0)_b . p(0)_c = \frac{5}{29} .\frac{13}{29} . \frac{9}{209} = \frac{585}{175769} \simeq 0,003 $$
 
 \paragraph{Ejercicio 8}
    Para modelar el sistema presentado en este ejercicio, se plantean las siguientes hipótesis:
