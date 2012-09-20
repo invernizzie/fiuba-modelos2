@@ -123,23 +123,47 @@
     $$t_s = 0,5 h/cl  \Rightarrow \mu = 2 cl/h $$
     $$\lambda = 5 cl/h $$
     
-    \paragraph{6.a.} La probabilidad de que no haya clientes en la peluquería es P(0). Para eso, se calcurarán todas las probabilidades a partir de la tabla.
+    \paragraph{6.a.} La probabilidad de que no haya clientes en la peluquería es P(0). Para eso, se calcurarán todas las probabilidades a partir de la tabla,
+    resolviendo el siguiente sistema de 5 ecuaciones y 5 incognitas.\\
+    Se calcula la probabilidad de un estado mediante la fórmula $p(n) = \frac{\lambda_(n-1)}{\mu_n} p(n-1)$
+    $$ \sum_{n=0}^{4} p(n) = 1 $$
+    $$ p(1) = \frac{\lambda_0}{\mu_1}p(0) = \frac{\lambda}{\mu}p(0) = \frac{5}{2}p(0)$$
+    $$ p(2) = \frac{\lambda_1}{\mu_2}p(1) = \frac{\lambda}{2\mu}p(1) = \frac{5}{4}p(1) = \frac{25}{8}p(0)$$
+    $$ p(3) = \frac{\lambda_2}{\mu_3}p(2) = \frac{\lambda}{2\mu}p(2) = \frac{5}{4}p(2) = \frac{125}{32}p(0)$$
+    $$ p(4) = \frac{\lambda_3}{\mu_2}p(3) = \frac{\frac{\lambda}{2}}{2\mu}p(3) = \frac{5}{8}p(3) = \frac{625}{256}p(0)$$
+    
+    Despejando $p(0)$ del sistema y reemplazando los valores se obtienen las siguientes probabilidades:
+    $$ p(0) = \frac{256}{3321} \simeq 0,08$$
+    $$ p(1) = \frac{640}{3321} \simeq 0,19$$
+    $$ p(2) = \frac{800}{3321} \simeq 0,24$$
+    $$ p(3) = \frac{1000}{3321}\simeq 0,30$$
+    $$ p(4) = \frac{625}{3321} \simeq 0,19$$
+    
+    Por lo tanto, la probabilidad de que no haya clientes en la peluquería es $p(0) = 0,08$
+       
     
     \paragraph{6.b.} La probabilidad de que haya clientes esperando se relaciona con la probabilidad de los estados 3 y 4. \\
-    $$P(3) + P(4) = ..$$
+    $$P(3) + P(4) = \frac{1625}{3321} \simeq 0,49$$
     
     \paragraph{6.c.} El porcentaje de ocupación de cada peluquero (o canal) es: \\
-    $$\frac{H}{M} = \frac{H}{2} = $$
+    $$\frac{H}{M} = \frac{H}{2}$$
+    Para eso podemos calcular H por definicion:
+    $$H = \sum_{n=0}^{4}H(n) p(n) = 0 p(0) + 1 p(1) + 2[p(2)+p(3)+p(4)] = \frac{610}{369} \simeq 1,65 $$
+    Con lo cual el porcentaje de ocupación es 1,65.    
     
-    \paragraph{6.d.} La cantidad promedio de clientes esperando se obtiene mediante $L_c$
+    \paragraph{6.d.} La cantidad promedio de clientes esperando se obtiene mediante $L_c$.
+    $$L_c = \sum_{n=0}^{4}L_c(n) p(n) = 1 p(3) + 2 p(4) = \frac{2250}{3321} \simeq 0,68 $$
     
-    \paragraph{6.e.} La cantidad promedio de clientes que no ingresan es igual al rechazo R.
+    
+    \paragraph{6.e.} La cantidad promedio de clientes que no ingresan es igual al rechazo  $ \overline{R}$
+    En este caso se puede calcular como $ \overline{R} = \lambda - \overline{\lambda}$ (Se tomará el valor de $\overline{\lambda}$ del punto siguiente.)
+    $$ \Rightarrow \overline{R} = 5 - \frac{1220}{369} \simeq 1.69$$
+    
     
     \paragraph{6.f.} Para obtener el ingreso por hora, se debe calcular la cantidad de clientes atendidos por hora, es decir $\mu$.\\
     Se sabe que la cantidad de clientes atendidos es igual a la cantidad de clientes que efectivamente ingresan, entonces \\
-  %%  \overline{\mu} = \bar{\lamda} = \lamda - R
-  
-    ... TO BE CONTINUED ...
+    $$ \overline{\lambda} = \sum_{n=0}^{4}\lambda(n) p(n) = \lambda [ p(0)+p(1)+p(2) ] + \frac{\lambda}{2} p(3) = \frac{1220}{369} \simeq 3.31$$
+ 
 
 \paragraph{Ejercicio 7}
 
