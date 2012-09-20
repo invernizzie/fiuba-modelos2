@@ -236,9 +236,44 @@ el mismo, puede modelarse como P/P/1/3. Los datos son $ \lambda = 4h^{-1} $, $ t
 Por lo tanto:
 $$\overline{L} = 0 * 0.178 + 1 * 0.329 + 2 * 0.247 + 3 * 0.164 + 4 * 0.082 = 1.643 $$
   
-\paragraph{5.b.}
+\paragraph{5.b.} Esto se puede calcular como:
+  $$T_inactivo = 1 - H$$
+ Entonces calculo:
+  $$H = p(1) + p(2) + p(3) + p(4) = 0.329 + 0.247 + 0,164 + 0.082 = 0.822$$
+Por lo tanto:
+  $$T_inactivo = 1 - 0.822 = 0.178$$
+
+\paragraph{5.c.} El tiempo de funcionamiento en promedio de una maquina se puede calcular como:
+
+$$T_{funcionando} = \frac{T_r}{(T_r + W)}$$
+Entonces calculando:
+  $$W = W_c + t_s = \frac{L_c}{\overline{\lambda}} + 7 dias$$
+Calculo $L_c$ y $\overline{\lambda}$:
+  $$L_c = 1 p(2) + 2 p(3) + 3 p(4) =  0.247 + 2 * 0.164 + 3 * 0.082 = 0.821$$
+  $$\overline{\lambda} = 4*0.066 p(0) + 3*0.066 p(1) + 2*0.066 p(2) + 0.066 p(3) = 0.264 * 0.178 + 0.198 * 0.329 + 0.132 * 0.247 + 0.066 * 0.164 = 0.155 $$
+Por lo tanto:
+      $$W = \frac{0.812}{0.155} + 7 dias = 5.24 + 7 = 12.24$$
+Entonces el $T_{funcionando}$ ser\'a:
+$$T_{funcionando} = \frac{15}{(15 + 12.24)} = 0.55$$
     
-    
+\paragraph{5.c.} Considerando que el porcentaje de utilizaci\'on de las m\'aquinas es del 55\% y que el beneficio que obtengo es de 50\$ por cada dia que las m\'aquinas funcionan;
+ En un mes se observa un beneficio de: $Beneficio = 0.55 * 50\$ * 24 dias =  660\$ $
+Si tengo 2 operarios, recalculo $L_c$:
+
+$$L_c =  1 p(3) + 2 p(4) =  0.164 + 2 * 0.082 = 0.328$$
+
+Entonces, $W = \frac{0.328}{0.155} + 7 dias = 9.12 dias$
+
+Entonces el nuevo ``porcentaje de utilizacion de las m\'aquinas'' ser\'a:
+$$T_{funcionando} = \frac{15}{(15 + 9.12)} = 0.62$$
+
+Calculando el beneficio obtenido con este nuevo porcentaje de utilizaci\'on se observa que:
+$Beneficio = 0.62 * 50\$ * 24 dias =  744\$ $
+
+Con lo cual, se puede concluir que como el beneficio obtenido se incrementa en 84\$ por mes y contratar un nuevo empleado tiene un costo de 700\$ no es conveniente contratar a esta nueva persona.
+
+
+
 \paragraph{Ejercicio 6}
     Se puede modelar la peluquería como un P/P/M con M=2, ya que ambos peluqueros atienden en paralelo. Si bien el sistema es ilimitado, los clientes son impacientes con lo cual hay un número finito de estados posibles.
     La siguiente tabla describe al sistema:
