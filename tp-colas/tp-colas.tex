@@ -433,9 +433,14 @@ Con lo cual, se puede concluir que como el beneficio obtenido se incrementa en 8
    Para modelar el sistema presentado en este ejercicio, se plantean las siguientes hipótesis:
 
    \begin{itemize}
-      \item Población infinita.
+      \item Los procesos de arribo y atención de clientes son de tipo Poisson.
+      \item Se cuenta con un único canal de atención.
+      \item La capacidad del sistema es infinita.
+      \item La disciplina de atención es FIFO.
+      \item El sistema se encuentra en régimen estacionario.
+      \item El sistema tiene sólo una cola.
+      \item La población de clientes es infinita.
       \item No hay impaciencia.
-      \item No hay rechazo.
    \end{itemize}
 
    Los estados posibles del sistema son:
@@ -454,7 +459,7 @@ Con lo cual, se puede concluir que como el beneficio obtenido se incrementa en 8
    \end{center}
 
    \underline{Datos:} \\
-   $$\lambda = 5 cl/min $$
+   $$\lambda = 8 cl/min $$
    $$\mu = 10 cl/min $$
 
    \paragraph{Cálculo de P(n)}
@@ -582,8 +587,8 @@ Con lo cual, se puede concluir que como el beneficio obtenido se incrementa en 8
       $$           + p(0,1,1,0) (1 - \lambda \Delta t) (\mu_2 \Delta t) (1 - \mu_3 \Delta t)$$
       $$           + p(0,1,0,1) (1 - \lambda \Delta t) (\mu_2 \Delta t) (1 - \mu_4 \Delta t)$$
       $$           + p(0,0,1,1) (1 - \lambda \Delta t) (1 - \mu_3 \Delta t) (1 - \mu_4 \Delta t)$$
-      $$           + p(b,0,1,1) (1 - \lambda \Delta t) [\mu_3 \Delta t + \mu_4 \Delta t)]$$
-      $$           + p(0,b,1,1) (1 - \lambda \Delta t) [\mu_3 \Delta t + \mu_4 \Delta t)]$$
+      $$           + p(b,0,1,1) (1 - \lambda \Delta t) [(\mu_3 \Delta t) (1 - \mu_4 \Delta t) + (1 - \mu_3 \Delta t) (\mu_4 \Delta t)]$$
+      $$           + p(0,b,1,1) (1 - \lambda \Delta t) [(\mu_3 \Delta t) (1 - \mu_4 \Delta t) + (1 - \mu_3 \Delta t) (\mu_4 \Delta t)]$$
 
 
 \paragraph{Ejercicio 10}
