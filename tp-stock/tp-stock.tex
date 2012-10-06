@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc}
+
+\def \anio {a\tilde{n}o}
+
+\title{Trabajo Práctico 2\\Administración de Stocks}
+\author{}
+\date{\today}
+
+%%% Agregar integrantes del grupo %%%
+
+\begin{document}
+\maketitle
+
+%%%% Poner el enunciado aca.. y un indice %%%%
+\paragraph{Ejercicio 4}
+    Los datos proporcionados son la demanda anual $ D = 20000 u $, el costo de setup $ K = \$6000 $, el costo de almacenamiento $ C_1 = \$20\ u^{-1}\ \anio^{-1} $ y la tasa de producción $ p = 5000u\ mes^{-1} = 60000u\ \anio^{-1}$.
+
+    \paragraph{4.a}
+    El modelo elegido para este problema es el Modelo de Reposición no Instantánea. Se asumen las siguientes hipótesis:
+        \begin{itemize}
+            \item Se administra un solo producto.
+            \item La demanda es conocida y constante.
+            \item No hay descuentos por cantidad.
+            \item No hay inflación.
+            \item La producción se efectúa a tasa conocida y constante.
+            \item No se admite agotamiento.
+            \item No hay stock de protección.
+            \item Costo de setup independiente del tamaño del lote.
+            \item Costo unitario de almacenimiento independiente del stock.
+            \item Se supone continuidad permanente de operación.
+        \end{itemize}
+
+    \paragraph{4.b.} 
+        $$ q_o = \sqrt{ \frac{2KD}{TC_1 \left( 1 - \frac{d}{p} \right)} } $$
+        $$ q_o = \sqrt{ \frac{2 \cdot \$ 6000 \cdot 20000u\ \anio^{-1}}{\$20 u^{-1}\ \anio^{-1} \left( 1 - \frac{20000u\ \anio^{-1}}{60000u\ \anio^{-1}} \right)} } $$
+        $$ q_o = \sqrt{ \frac{2 \cdot 6 \cdot 10^6\ u^2}{1 - \frac{2}{6}} } = q_o = \sqrt{ \frac{2 \cdot 6 \cdot 10^6}{\frac{2}{3}} }\ u = \sqrt{ 3 \cdot 6 \cdot 10^6 }\ u $$
+        $$ q_o = 3 \cdot 10^3 \sqrt {2}\ u \simeq 4242.64\ u $$
+
+    \paragraph{4.c.}
+        Como se indica en el item h se consideran 20 días por mes.
+        
+        $$ \frac{T}{t_i} = \frac{D}{q} \Rightarrow t_i = \frac{Tq}{D} $$
+        $$ t_i = \frac{3 \cdot 10^3 \sqrt{2}\ u}{20000u\ \anio^{-1}} = \frac{3 \sqrt{2}\ \anio}{20} \frac{240 dias}{\anio} $$
+        $$ t_i = 36 \sqrt{2} dia \simeq 50.91\ dias $$
+
+\end{document}
