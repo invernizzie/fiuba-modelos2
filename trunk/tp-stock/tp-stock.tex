@@ -3,6 +3,7 @@
 \usepackage[spanish]{babel}
 \selectlanguage{spanish}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
 
 \def \anio {a\tilde{n}o}
 
@@ -37,14 +38,41 @@
     \paragraph{4.b.} 
         $$ q_o = \sqrt{ \frac{2KD}{TC_1 \left( 1 - \frac{d}{p} \right)} } $$
         $$ q_o = \sqrt{ \frac{2 \cdot \$ 6000 \cdot 20000u\ \anio^{-1}}{\$20 u^{-1}\ \anio^{-1} \left( 1 - \frac{20000u\ \anio^{-1}}{60000u\ \anio^{-1}} \right)} } $$
-        $$ q_o = \sqrt{ \frac{2 \cdot 6 \cdot 10^6\ u^2}{1 - \frac{2}{6}} } = q_o = \sqrt{ \frac{2 \cdot 6 \cdot 10^6}{\frac{2}{3}} }\ u = \sqrt{ 3 \cdot 6 \cdot 10^6 }\ u $$
-        $$ q_o = 3 \cdot 10^3 \sqrt {2}\ u \simeq 4242.64\ u $$
+        $$ q_o = \sqrt{ \frac{2 \cdot 6 \cdot 10^6\ u^2}{1 - \frac{2}{6}} } = \sqrt{ \frac{2 \cdot 6 \cdot 10^6}{\frac{2}{3}} }\ u = \sqrt{ 3 \cdot 6 \cdot 10^6 }\ u $$
+        $$ \boxed{ q_o = 3 \cdot 10^3 \sqrt {2}\ u \simeq 4242.64\ u } $$
 
     \paragraph{4.c.}
-        Como se indica en el item h se consideran 20 días por mes.
+        Como se indica en el item h, se consideran 20 días por mes.
         
         $$ \frac{T}{t_i} = \frac{D}{q} \Rightarrow t_i = \frac{Tq}{D} $$
         $$ t_i = \frac{3 \cdot 10^3 \sqrt{2}\ u}{20000u\ \anio^{-1}} = \frac{3 \sqrt{2}\ \anio}{20} \frac{240 dias}{\anio} $$
-        $$ t_i = 36 \sqrt{2} dia \simeq 50.91\ dias $$
+        $$ \boxed{ t_i = 36 \sqrt{2} dias \simeq 50.91\ dias } $$
+    
+    \paragraph{4.d.}
+        $$ CTE_o = bD + \sqrt{ 2KDTC_1 \left( 1 - \frac{d}{p} \right) } = \sqrt{ 2KDTC_1 \left( 1 - \frac{d}{p} \right) } $$
+        $$ CTE_o = \sqrt{ 2\ \$6000 \cdot 20000u\ \anio^{-1}\ \$20u^{-1}\anio^{-1} \cdot \frac{2}{3} } = \$2 \sqrt{ \frac{24 \cdot 10^8}{3} } = \$2 \cdot 10^4 \sqrt{8} $$
+        $$ \boxed{ CTE_o = \$4 \cdot 10^4 \sqrt{2} \simeq \$ 56568.54 } $$
+
+    \paragraph{4.e.}
+        $$ n = \frac{D}{q} = \frac{20000u}{3 \cdot 10^3 \sqrt{2}\ u} $$
+        $$ \boxed{ n = \frac{20}{3 \sqrt{2}} \simeq 4.714 } $$
+    
+    \paragraph{4.f.}
+        $$ S_o = q_o \left( 1 - \frac{d}{p} \right) = 3 \cdot 10^3 \sqrt {2}\ u \cdot \frac{2}{3} $$
+        $$ \boxed{ S_o = 2 \cdot 10^3 \sqrt {2}\ u \simeq 2828.43 u } $$
+    
+    \paragraph{4.g.}
+        Lo que se pide es el tiempo de producción de una orden $ t_{ip} $ y el tiempo de demanda únicamente de una orden $ t_{id} $. Como se indica en el item h, se consideran 20 días por mes.
+        
+        $$ t_{ip} = \frac{q}{p} = \frac{3 \cdot 10^3 \sqrt {2}\ u}{60000u\ \anio^{-1}} = \frac{3 \sqrt {2}\ \anio}{60} = \frac{\sqrt{2}\ \anio}{20} \cdot \frac{240dias}{\anio}$$
+        $$ \boxed{ t_{ip} = 12\sqrt{2}\ dias \simeq 16.97\ dias } $$
+        
+        $$ t_{id} = \frac{S}{d} = \frac{2 \cdot 10^3 \sqrt {2}\ u}{20000u\ \anio^{-1}} = \frac{\sqrt{2}\ \anio}{10} \cdot \frac{240\ dias}{\anio} $$
+        $$ \boxed{ t_{id} = 24\sqrt{2}\ dias \simeq 33.94\ dias } $$
+    
+    \paragraph{4.h.}
+        $$ LT = 2\ dias \leq 33.94\ dias = t_{id} \Rightarrow S_R = LT \cdot d $$
+        $$ S_R = \frac{2\ dias \cdot 20000u}{\anio} \cdot \frac{\anio}{240\ dias} = \frac{2 \cdot 20000u}{240} = \frac{2000u}{12} $$
+        $$ \boxed{S_R = 166.\overline{6} u} $$
 
 \end{document}
