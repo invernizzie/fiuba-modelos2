@@ -3,6 +3,7 @@
 \usepackage[spanish]{babel}
 \selectlanguage{spanish}
 \usepackage[utf8]{inputenc}
+\usepackage[pdftex]{graphicx}
 
 % Utilizado para recuadrar expresiones
 \usepackage{amsmath}
@@ -78,5 +79,81 @@
         $$ LT = 2\ dias \leq 33.94\ dias = t_{id} \Rightarrow S_R = LT \cdot d $$
         $$ S_R = \frac{2\ dias \cdot 20000u}{\anio} \cdot \frac{\anio}{240\ dias} = \frac{2 \cdot 20000u}{240} = \frac{2000u}{12} $$
         $$ \boxed{S_R = 166.\overline{6} u} $$
+
+\pagebreak
+
+\paragraph{Ejercicio 7}
+Se trata de un caso de modelo básico (ver ejercicio 1) de un solo ítem, demanda constante, agotamiento no admitido, donde el costo de almacenamiento $C_{1}$ crece mediante la siguiente ley:
+\begin{center}
+  \includegraphics[scale=0.4,keepaspectratio=true]{img/7/7_QvsC1.png} 
+\end{center}
+Se sabe que para este modelo:
+  \begin{equation}\label{7_CTE}CTE_i = bD + \frac{1}{2}qC_{1i}T + K\frac{D}{q} \end{equation}
+  $$ q_{oi} = \sqrt{ \frac{2KD}{TC_{1i}}} $$
+  $$ CTE_{oi} = bD + \sqrt{ 2KDC_{1i}T }$$
+
+Con lo cual, se deduce la siguiente relacion entre variables:
+ $$ C_{11} < C_{12} < C_{13} $$
+ $$ q_{o1} > q_{o2} > q_{o3}$$
+ $$ CTE_{o1} < CTE_{o2} < CTE_{o3} $$
+ 
+El procedimiento a seguir para la búsqueda del costo total esperado mínimo es el siguiente: 
+\begin{enumerate}
+ \item si $q_{o1} < Q_1 \Rightarrow CTE_o = CTE_{o1}$ \\
+      \includegraphics[scale=0.5,keepaspectratio=true]{img/7/7_QvsCTE_1.png} 
+ \item sino, si $ q_{o2} < Q_1 \Rightarrow CTE_o = min( CTE(Q_1, C_{12}), CTE(Q_1, C_{11})$ \\
+       Se entiende por $CTE(Q_i, C_{1i})$ el costo total esperado \eqref{7_CTE} evaluado en $Q_i$ y $C_{1i}$ \\
+      \includegraphics[scale=0.5,keepaspectratio=true]{img/7/7_QvsCTE_2.png} 
+ \item sino, si $ Q_1 < q_{o2} < Q_2 \Rightarrow CTE_o = min( CTE_{o2}, CTE(Q_1, C_{11})) $ \\
+      \includegraphics[scale=0.5,keepaspectratio=true]{img/7/7_QvsCTE_3.png} 
+ \item sino, si $q_{o3} < Q_1 \Rightarrow CTE_o = min( CTE(Q_2, C_{12}), CTE(Q_2, C_{13}), CTE(Q_1, C_{11})) $ \\
+      \includegraphics[scale=0.5,keepaspectratio=true]{img/7/7_QvsCTE_4.png} 
+ \item sino, $q_{o3} > Q_2 \Rightarrow CTE_o = min(CTE_{o3},CTE(Q_2, C_{12}), CTE(Q_1, C_{11}) ) $ \\
+      \includegraphics[scale=0.5,keepaspectratio=true]{img/7/7_QvsCTE_5.png} 
+ \end{enumerate}
+
+Para cada uno de estos casos, el costo total esperado en función de q está dado por la curva naranja, donde cada $CTE_i$ es válido dentro de su rango. 
+\begin{enumerate}
+ \item \includegraphics[scale=0.4,keepaspectratio=true]{img/7/7_QvsCTE_1B.png} 
+ \item \includegraphics[scale=0.4,keepaspectratio=true]{img/7/7_QvsCTE_2B.png} 
+ \item \includegraphics[scale=0.4,keepaspectratio=true]{img/7/7_QvsCTE_3B.png} 
+ \item \includegraphics[scale=0.4,keepaspectratio=true]{img/7/7_QvsCTE_4B.png} 
+ \item \includegraphics[scale=0.4,keepaspectratio=true]{img/7/7_QvsCTE_5B.png} 
+\end{enumerate}
+
+
+\paragraph{Ejercicio 8}
+Se trata de un caso de modelo básico (ver ejercicio 1) de un solo ítem, demanda constante, agotamiento no admitido y con K creciente mediante la siguiente ley: 
+\begin{center}
+  \includegraphics[scale=0.4,keepaspectratio=true]{img/8/8_QvsK.png} 
+\end{center}
+
+Se sabe que para este modelo:
+  \begin{equation}\label{8_CTE}CTE_i = bD + \frac{1}{2}qC_1T + K_i \frac{D}{q} \end{equation}
+  $$ q_{oi} = \sqrt{ \frac{2K_iD}{TC_1}} $$
+  $$ CTE_{oi} = bD + \sqrt{ 2K_iDC_1T }$$
+
+Con lo cual, se deduce la siguiente relacion entre variables:
+ $$ k_1 < k_2 < k_3 $$
+ $$ q_{o1} < q_{o2} < q_{o3}$$
+ $$ CTE_{o1} < CTE_{o2} < CTE_{o3} $$
+ 
+El procedimiento a seguir para la búsqueda del costo total esperado mínimo es el siguiente: 
+\begin{enumerate}
+ \item si $q_{o1} < Q_1 \Rightarrow CTE_o = CTE_{o1} $ \\
+    \includegraphics[scale=0.5,keepaspectratio=true]{img/8/8_QvsCTE_1.png} 
+ \item sino, si $q_{o2} < Q_2 \Rightarrow CTE_o = min( CTE_{o2}, CTE(Q_1, k_1)) $ \\
+      Se entiende por $CTE(Q_i, k_i)$ el costo total esperado \eqref{8_CTE} evaluado en $Q_i$ y $k_i$ \\
+      \includegraphics[scale=0.5,keepaspectratio=true]{img/8/8_QvsCTE_2.png} 
+ \item sino, $q_{o3} > Q_2 \Rightarrow CTE_o = min( CTE_{o3}, CTE(Q_2, k_2), CTE(Q_1, k_1) )$ \\
+      \includegraphics[scale=0.5,keepaspectratio=true]{img/8/8_QvsCTE_3.png} 
+\end{enumerate}
+
+Dado que cada curva es válida únicamente en un intervalo determinado por k, para cada caso el CTE en función de q está dado por la curva naranja.\\
+\begin{enumerate}
+  \item \includegraphics[scale=0.5,keepaspectratio=true]{img/8/8_QvsCTE_1b.png} 
+  \item \includegraphics[scale=0.5,keepaspectratio=true]{img/8/8_QvsCTE_2b.png} 
+  \item \includegraphics[scale=0.5,keepaspectratio=true]{img/8/8_QvsCTE_3b.png} 
+\end{enumerate}
 
 \end{document}
