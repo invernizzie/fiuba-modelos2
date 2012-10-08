@@ -99,6 +99,71 @@
 
         Puede verse que $CTE_1 < CTE_2$, por lo tanto $ \boxed{ n = 28 } $
 
+\paragraph{Ejercicio 2}
+  \paragraph{Datos}
+    \begin{itemize}
+      \item Demanda: $d = 1000u/\anio$
+      \item Costo unitario: $b = 40\$/u$
+      \item Costo de setup: $K = 4000\$$ 
+      \item Costo de almacenamiento: $C_1 = 540\$/u * \anio$
+      \item Lead time: $LT = 2dias$
+      \item Período: $T = 1\anio$
+      \item Stock de protección: $ SP = 5dias * \frac{1000u}{20dias} = 250u$
+      \item Superficie unitaria: $ SU = 2m^2/u$
+      \item Superficie disponible: $ ST = 1500m^2$
+    \end{itemize}
+
+  \paragraph{2.a}
+    El modelo utilizado para representar el sistema planteado es el modelo básico con stock de reorden y stock de protección. Las hipótesis asumidas para ello son:
+    \begin{itemize}
+      \item Se administra sólo un producto.
+      \item La demanda es conocida y constante.
+      \item La demanda es independiente de otras variables.
+      \item La reposición es instantánea.
+      \item No se admite déficit del producto.
+      \item El producto se mide en unidades contínuas.
+      \item El horizonte de planeamiento es a largo plazo.
+      \item No hay inflación.
+      \item El costo de setup es independiente del tamaño del lote.
+      \item El costo de almacenamiento es independiente del stock.
+    \end{itemize}
+
+  \paragraph{2.b}
+    Este sistema mantiene todos los datos del anterior y agrega un nuevo término al cálculo de $CTE$, teniendo en cuenta el costo de almacenamiento del stock de protección.
+        $$ CTE = b D + q \cdot C_1 T / 2 + K D / q + SP \cdot C_1 T $$
+
+    Como el nuevo término añadido no depende del valor de $q$, el lote de compra óptimo se mantiene igual al del ejercicio anterior.
+
+    Sin embargo, se añade una restricción, y es que la superficie disponible limita el stock a un máximo de $\frac{1500m^2}{2m^2/u} = 750u $.
+
+    Esto implica que $ q + SP \le 750u \Rightarrow q \le 750u - SP = 750u - 250u = 500u$
+
+    Ya que $q_o = 421.63u \le 500u $, la nueva restricción no afecta al óptimo obtenido.
+    
+    Por lo tanto:
+        $$ \boxed{ q_o \simeq 421.63u} $$
+
+  \paragraph{2.c}
+        $$ CTE = b D + q \cdot C_1 T / 2 + K D / q + SP \cdot C_1 T $$
+        $$ CTE \simeq 40\$/u \cdot 12000u/\anio + 421.63u \cdot 540\frac{\$}{u\cdot\anio} / 2 + \frac{4000\$ \cdot 12000u/\anio}{421.63u} + 250u \cdot 540\frac{\$}{u\cdot\anio}$$
+        $$ \boxed{ CTE_o \simeq 842724\$/\anio } $$
+
+
+  \paragraph{2.d}
+        $$ SR = SP + LT \cdot d $$
+        $$ SR = 250u + \frac{2 dias}{240dias/\anio} \cdot 12000u/\anio $$
+        $$ \boxed{ SR = 350u } $$
+
+  \paragraph{2.e}
+    Bajando la superficie disponible a $1100m^2$, el almacén baja su capacidad a $550u$.
+    $$ q + SP \le 750u \Rightarrow q \le 550u - SP = 550u - 250u = 300u $$
+
+    Dado que $q_o > 300u$, no se satisface la restricción de espacio. Sin embargo, teniendo en cuenta la forma de la curva que define $CTE$, se deduce que el $q \le 300u$ cuyo $CTE$ es más cercano al óptimo, es el más cercano a $q_o$, y este es el $q = 300u$.
+
+    Bajo estas condiciones:
+        $$ CTE_o = 40\$/u \cdot 12000u/\anio + 300u \cdot 540\frac{\$}{u\cdot\anio} / 2 + \frac{4000\$ \cdot 12000u/\anio}{300u} + 250u \cdot 540\frac{\$}{u\cdot\anio}$$
+        $$ \boxed{ CTE_o \simeq 856000\$/\anio } $$
+
 
 \paragraph{Ejercicio 3}
 
