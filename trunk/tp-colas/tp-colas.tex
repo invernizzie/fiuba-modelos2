@@ -275,7 +275,31 @@ Con lo cual, se puede concluir que como el beneficio obtenido se incrementa en 8
 
 
 \paragraph{Ejercicio 6}
-    Se puede modelar la peluquería como un P/P/M con M=2, ya que ambos peluqueros atienden en paralelo. Si bien el sistema es ilimitado, los clientes son impacientes con lo cual hay un número finito de estados posibles.
+    Se puede modelar la peluquería como un P/P/M con M=2, ya que ambos peluqueros atienden en paralelo. \\
+    Las hipótesis del modelos son:
+    \begin{itemize}
+     \item El arribo de clientes y el proceso de servicio corresponden a una distribución Poisson.
+     \item Hay 2 canales, de los cuales uno atiende si al entrar un cliente, hay una persona esperando.
+     \item Se analiza el sistema en Régimen Permanente o Estacionario.
+     \item La impaciencia está dada por la tabla que se especifica.
+     \item La capacidad del sistema es infinita.
+     \item La población es infinita.
+     \item Hay una única cola frente al canal.
+    \end{itemize}
+
+    Si bien el sistema es ilimitado, los clientes son impacientes con lo cual hay un número finito de estados posibles. La función de impaciencia es:
+    \begin{center}
+    \begin{tabular}{|| c | c ||}
+    \hline 
+    n & PI(n) \\ \hline \hline
+    0 & 1\\ \hline
+    1 & 1\\ \hline
+    2 & 0,5\\ \hline
+    3 & 0,5\\ \hline
+    4 & 0\\ \hline
+    
+    \end{tabular}
+    \end{center}
     La siguiente tabla describe al sistema:
     \begin{center}
     \begin{tabular}{|| c | c | c | c | c | c | c | c ||}
@@ -283,7 +307,7 @@ Con lo cual, se puede concluir que como el beneficio obtenido se incrementa en 8
      n & P(n) & $\lambda_n$ & $\mu_n$ & $L_n$& $L_cn$ & $H_n$ & $R_n$ \\ \hline \hline
      0 & P(0) & $\lambda$   & 0       & 0    & 0      & 0     & 0	\\ \hline
      1 & P(1) & $\lambda$   & $\mu$   & 1    & 0      & 1     & 0	\\ \hline
-     2 & P(2) & $\lambda$   & 2$\mu$  & 2    & 0      & 2     & 0	\\ \hline
+     2 & P(2) & $\lambda$/2 & $\mu$   & 2    & 1      & 1     & $\lambda$/2	\\ \hline
      3 & P(3) & $\lambda$/2 & 2$\mu$  & 3    & 1      & 2     & $\lambda$/2 \\ \hline
      4 & P(4) & 0           & 2$\mu$  & 4    & 2      & 2     & $\lambda$   \\ \hline  
      
@@ -298,41 +322,40 @@ Con lo cual, se puede concluir que como el beneficio obtenido se incrementa en 8
     Se calcula la probabilidad de un estado mediante la fórmula $p(n) = \frac{\lambda_(n-1)}{\mu_n} p(n-1)$
     $$ \sum_{n=0}^{4} p(n) = 1 $$
     $$ p(1) = \frac{\lambda_0}{\mu_1}p(0) = \frac{\lambda}{\mu}p(0) = \frac{5}{2}p(0)$$
-    $$ p(2) = \frac{\lambda_1}{\mu_2}p(1) = \frac{\lambda}{2\mu}p(1) = \frac{5}{4}p(1) = \frac{25}{8}p(0)$$
-    $$ p(3) = \frac{\lambda_2}{\mu_3}p(2) = \frac{\lambda}{2\mu}p(2) = \frac{5}{4}p(2) = \frac{125}{32}p(0)$$
-    $$ p(4) = \frac{\lambda_3}{\mu_2}p(3) = \frac{\frac{\lambda}{2}}{2\mu}p(3) = \frac{5}{8}p(3) = \frac{625}{256}p(0)$$
+    $$ p(2) = \frac{\lambda_1}{\mu_2}p(1) = \frac{\lambda/2}{\mu}p(1) = \frac{5}{4}p(1) = \frac{25}{8}p(0)$$
+    $$ p(3) = \frac{\lambda_2}{\mu_3}p(2) = \frac{\lambda/2}{2\mu}p(2) = \frac{5}{8}p(2) = \frac{125}{64}p(0)$$
+    $$ p(4) = \frac{\lambda_3}{\mu_2}p(3) = \frac{\lambda/2}{2\mu}p(3) = \frac{5}{8}p(3) = \frac{625}{512}p(0)$$
     
     Despejando $p(0)$ del sistema y reemplazando los valores se obtienen las siguientes probabilidades:
-    $$ p(0) = \frac{256}{3321} \simeq 0,08$$
-    $$ p(1) = \frac{640}{3321} \simeq 0,19$$
-    $$ p(2) = \frac{800}{3321} \simeq 0,24$$
-    $$ p(3) = \frac{1000}{3321}\simeq 0,30$$
-    $$ p(4) = \frac{625}{3321} \simeq 0,19$$
+    $$ p(0) = \frac{512}{5017} \simeq 0,102$$
+    $$ p(1) = \frac{1280}{5017} \simeq 0,255$$
+    $$ p(2) = \frac{1600}{5017} \simeq 0,319$$
+    $$ p(3) = \frac{1000}{5017}\simeq 0,199$$
+    $$ p(4) = \frac{625}{5017} \simeq 0,125$$
     
-    Por lo tanto, la probabilidad de que no haya clientes en la peluquería es $p(0) = 0,08$
+    Por lo tanto, la probabilidad de que no haya clientes en la peluquería es $p(0) = 0,102$
        
     
-    \paragraph{6.b.} La probabilidad de que haya clientes esperando se relaciona con la probabilidad de los estados 3 y 4. \\
-    $$P(3) + P(4) = \frac{1625}{3321} \simeq 0,49$$
+    \paragraph{6.b.} La probabilidad de que haya clientes esperando se relaciona con la probabilidad de los estados 2, 3 y 4. \\
+    $$P(2) + P(3) + P(4) = \frac{3225}{5017} \simeq 0,643$$
     
-    \paragraph{6.c.} El porcentaje de ocupación de cada peluquero (o canal) es: \\
-    $$\frac{H}{M} = \frac{H}{2}$$
-    Para eso podemos calcular H por definicion:
-    $$H = \sum_{n=0}^{4}H(n) p(n) = 0 p(0) + 1 p(1) + 2[p(2)+p(3)+p(4)] = \frac{610}{369} \simeq 1,65 $$
-    Con lo cual el porcentaje de ocupación es 1,65.    
+    \paragraph{6.c.} El porcentaje de ocupación del peluquero es $H_p$. Para eso podemos calcular H por definicion:
+    $$H_p = \sum_{n=0}^{4}H_p(n) p(n) = 0 p(0) + 1 p(1) + 1 p(2) + 1 p(3) + 1 p(4) \simeq 0,898 \simeq 90\% $$
+    Para el aprendiz:
+    $$H_a = \sum_{n=0}^{4}H_a(n) p(n) = 0 p(0) + 0 p(1) + 0 p(2) + 1 p(3) + 1 p(4) \simeq 0,324 \simeq 32\% $$
     
     \paragraph{6.d.} La cantidad promedio de clientes esperando se obtiene mediante $L_c$.
-    $$L_c = \sum_{n=0}^{4}L_c(n) p(n) = 1 p(3) + 2 p(4) = \frac{2250}{3321} \simeq 0,68 \frac{clientes}{hora}$$
+    $$L_c = \sum_{n=0}^{4}L_c(n) p(n) =1 p(2) + 1 p(3) + 2 p(4) = \frac{3850}{5017} \simeq 0,767$$
     
     
     \paragraph{6.e.} La cantidad promedio de clientes que no ingresan es igual al rechazo  $ \overline{R}$
     En este caso se puede calcular como $ \overline{R} = \lambda - \overline{\lambda}$ (Se tomará el valor de $\overline{\lambda}$ del punto siguiente.)
-    $$ \Rightarrow \overline{R} = 5 - \frac{1220}{369} \simeq 1.69 \frac{clientes}{hora}$$
+    $$ \Rightarrow \overline{R} = 5 - 3,08 \simeq 1,92 \frac{clientes}{hora}$$
     
     
-    \paragraph{6.f.} Para obtener el ingreso por hora, se debe calcular la cantidad de clientes atendidos por hora, es decir $\mu$.\\
+    \paragraph{6.f.} Para obtener el ingreso por hora, se debe calcular la cantidad de clientes atendidos por hora, es decir $\overline{\mu}$.\\
     Se sabe que la cantidad de clientes atendidos es igual a la cantidad de clientes que efectivamente ingresan, entonces \\
-    $$ \overline{\lambda} = \sum_{n=0}^{4}\lambda(n) p(n) = \lambda [ p(0)+p(1)+p(2) ] + \frac{\lambda}{2} p(3) = \frac{1220}{369} \simeq 3.31 \frac{clientes}{hora}$$
+    $$ \overline{\lambda} = \sum_{n=0}^{4}\lambda(n) p(n) = \lambda [ p(0)+p(1)] + \frac{\lambda}{2} [p(2) + p(3)] = \frac{15460}{5017} \simeq 3.08 \frac{clientes}{hora}$$
  
 
 \paragraph{Ejercicio 7}
@@ -348,7 +371,7 @@ Con lo cual, se puede concluir que como el beneficio obtenido se incrementa en 8
   Por las características del sistema, se deducen las siguientes igualdades: \\
   $$ \overline{\lambda_a} = \overline{\mu_a}$$
   $$ \lambda_b = \overline{\lambda_b} = 0.4 \overline{\lambda_a} = \overline{\mu_b}$$
-  $$ \lambda_c = 0.6 \overline{\lambda_a} = \overline{R_c} - \overline{\lambda_c} , \overline{\lambda_c} = \overline{\mu_c}$$
+  $$ \lambda_c = 0.6 \overline{\lambda_a} = \overline{R_c} + \overline{\lambda_c} , \overline{\lambda_c} = \overline{\mu_c}$$
   
  Para los sistemas A y C se planteará una tabla y para el sistema B se utilizarán las fórmulas de PP1. \\ \\
 
@@ -382,52 +405,57 @@ Con lo cual, se puede concluir que como el beneficio obtenido se incrementa en 8
   \underline{Sistema C} \\ 
     \begin{tabular}{|| c | c | c | c | c | c | c | c ||}
     \hline 
-     n & P(n) & $\lambda_n$ & $\mu_n$ & $L_n$& $L_cn$ & $H_n$ & $R_n$ 			\\ \hline \hline
-     0 & P(0) & $0.6 \lambda_a$ & 0       & 0    & 0      & 0     & 0			\\ \hline
-     1 & P(1) & $0.6 \lambda_a$ & $\mu_c$ & 1    & 0      & 1     & 0	\\ \hline
-     2 & P(2) & 0               & $\mu_c$ & 2    & 1      & 1     & $0.6 \lambda_a$ \\ \hline
+     n & P(n) & $\lambda_n$ & $\mu_n$ & $L_n$& $L_cn$ & $H_n$ & $R_n$ 	\\ \hline \hline
+     0 & P(0) & $0.6 \overline{\lambda_a}$ & 0       & 0    & 0      & 0     & 0	\\ \hline
+     1 & P(1) & $0.6 \overline{\lambda_a}$ & $\mu_c$ & 1    & 0      & 1     & 0	\\ \hline
+     2 & P(2) & 0               & $\mu_c$ & 2    & 1      & 1     & $0.6 \overline{\lambda_a}$ \\ \hline
      
     \end{tabular}
     
     Las probabilidades de cada estado se resuelven mediante el sistema: 
     $$ \sum_{n=0}^{3}p(n) = 1 $$
-    $$ p(1)_c = \frac{0.6\lambda_a}{\mu_c} p(0)_c = \frac{25}{3}p(0)_c$$
-    $$ p(2)_c = \frac{0.6\lambda_a}{2\mu_c} p(1)_c = \frac{125}{9} p(0)_c$$
+    $$ p(1)_c = \frac{0.6\overline{\lambda_a}}{\mu_c} p(0)_c$$
+    $$ p(2)_c = \frac{0.6\overline{\lambda_a}}{2\mu_c} p(1)_c$$
     
-    Despejando se obtiene: 
-    $$ p(0)_c = \frac{9}{209} \simeq 0,04 $$
-    $$ p(1)_c = \frac{75}{209} \simeq 0,36 $$
-    $$ p(2)_c = \frac{125}{209} \simeq 0,6 $$
+    Para esto, es necesario obtener $\overline{\lambda_a}$: \\
+    $$\overline{\lambda_a} = \sum_{n=0}^{3}\lambda(n) p(n)_a = \lambda p(0)_a + \frac{\lambda}{2} p(1)_a + \frac{\lambda}{5} p(2)_a = \frac{50}{29} + \frac{50}{29} + \frac{20}{29} = \frac{120}{29} \simeq 4.14$$
     
+    Reemplazando se obtiene obtiene: 
+    $$ p(1)_c = \frac{3}{5}\frac{120}{29}\frac{1}{2} p(0) = \frac{36}{29} p(0) $$
+    $$ p(2)_c = \frac{3}{5}\frac{120}{29}\frac{1}{2} p(1) = \frac{1296}{841} p(0) $$
+    
+    Por último, despejando p(0) y reemplazando en las ecuaciones:
+    $$ p(0)_c = \frac{841}{3181} \simeq 0,264 $$
+    $$ p(1)_c = \frac{1044}{3181} \simeq 0,328 $$
+    $$ p(2)_c = \frac{1296}{3181} \simeq 0,407 $$
   \end{center}
   
   \paragraph{7.a.} La cantidad promedio de clientes esperando en cada sector se obtiene mediante $\overline{L_ca}, \overline{L_cb},\overline{L_cc}$, para los sectores A,B y C respectivamente.\\
   Para los sistemas A y C se puede calcular por definición:
-  $$\overline{L_ca} = \sum_{n=0}^{3}L_ca(n) p(n)_a = p(1)_a + 2 p(2)_a + 3 p(3)_a = \frac{42}{29} \simeq 1,45 \frac{clientes}{minuto} $$
-  $$\overline{L_cc} = \sum_{n=0}^{2}L_cc(n) p(n)_c = p(1)_c + 2 p(2)_c = \frac{325}{209} \simeq 1,56 \frac{clientes}{minuto} $$
+  $$\overline{L_ca} = \sum_{n=0}^{3}L_ca(n) p(n)_a = 1 p(2)_a + 2 p(3)_a = \frac{14}{29} \simeq 0,48 $$
+  $$\overline{L_cc} = \sum_{n=0}^{2}L_cc(n) p(n)_c = p(2)_c = \frac{1296}{3181} \simeq 0,407  $$
   
-  Para el sistema B se utiliza la fórmula para PP1 $\overline{L_c} = \frac{\rho^2}{1-\rho}$, con $\rho = \frac{0.4\overline{\lambda_a}}{\mu_b}$ utilizando las igualdades mencionadas anteriormente. Esto implica calcular $\overline{\lambda_a}$
-  $$\overline{\lambda_a} = \sum_{n=0}^{3}\lambda(n) p(n)_a = \lambda p(0)_a + \frac{\lambda}{2} p(1)_a + \frac{\lambda}{5} p(2)_a = \frac{50}{29} + \frac{50}{29} + \frac{20}{29} = \frac{120}{29} \simeq 4.14$$
+  Para el sistema B se utiliza la fórmula para PP1 $\overline{L_c} = \frac{\rho^2}{1-\rho}$, con $\rho = \frac{0.4\overline{\lambda_a}}{\mu_b}$ utilizando las igualdades mencionadas anteriormente. Ya tenemos el $\overline{\lambda_a}$ calculado con lo cual \\
   $$\Rightarrow \rho = \frac{0.4\frac{120}{29}}{3} = \frac{16}{29} $$
-  $$\Rightarrow \overline{L_cb} = \frac{(\frac{16}{29})^2}{1-\frac{16}{29}} = \frac{256}{377} \simeq 0,68 \frac{clientes}{minuto} $$
+  $$\Rightarrow \overline{L_cb} = \frac{(\frac{16}{29})^2}{1-\frac{16}{29}} = \frac{256}{377} \simeq 0,68 $$
   
   \paragraph{7.b.} El ingreso promedio por minuto se calcula como $\$5000 \overline{\mu_b} + \$600 \overline{\mu_c} $. Considerando las igualdades mencionadas, se puede deducir:
   $$ \overline{\mu_b} = 0.4\overline{\lambda_a} = \frac{48}{29} \simeq 1,66 \frac{clientes}{minuto}$$ 
   
-  Para $\overline{\mu_c}$ se debe calcular primero el rechazo en C
-  $$ \overline{R_c} = \sum_{n=0}^{2} R_c(n) p_c(n) = 0.6 \lambda_a p_c(2) =  \frac{9000}{6061} \simeq 1,49$$
-  $$\Rightarrow \overline{\lambda_c} = \lambda_c -\overline{R_c} = 0.6\overline{\lambda_a} -\overline{R_c} = \frac{72}{29} - \frac{9000}{6061} = \frac{6048}{6061} \simeq 1,0$$
+  Para $\overline{\mu_c} = \overline{\lambda_c}$ se debe calcular primero el rechazo en C
+  $$ \overline{R_c} = \sum_{n=0}^{2} R_c(n) p_c(n) = 0.6 \overline{\lambda_a} p_c(2) =  \frac{93312}{92249} \simeq 1,012 \frac{clientes}{minuto}$$
+  $$\Rightarrow \overline{\lambda_c} = \lambda_c -\overline{R_c} = 0.6\overline{\lambda_a} -\overline{R_c} \simeq 2,483 - 1,012 = 1,471 \frac{clientes}{minuto}$$
   
   Con lo cual, el ingreso se calcula como
-  $$\$5000 \overline{\mu_b} + \$600 \overline{\mu_c} = \$5000 \frac{48}{29} + \$600 \frac{6048}{6061} = \$8.275,86 + \$598,71 = \$8.874,57 / minuto$$
+  $$\$5000 \overline{\mu_b} + \$600 \overline{\mu_c} = \$5000 \frac{48}{29} + \$600 1,471 = \$8.275,86 + \$882,6 = \$9.158,46 / minuto$$
   
   \paragraph{7.c.} La cantidad promedio de clientes que no ingresan al sistema por minuto se calcula mediante $\overline{R_a}$. 
   \underline{Hipótesis:} se consideran sólo los clientes que son rechazados en A dado que los que son rechazados en C ya recibieron parte del servicio.
-  $$\overline{R_a} = \lambda_a -\overline{\lambda_a} = 10 - \frac{48}{29} = \frac{242}{29} \simeq 8.34 cl/min$$
+  $$\overline{R_a} = \lambda_a -\overline{\lambda_a} = 10 - \frac{120}{29} = \frac{170}{29} \simeq 5,86 \frac{clientes}{minuto}$$
   
   \paragraph{7.d.} La probabilidad de que el sistema esté vacío se calcula mediante las probabilidades de que cada sistema este vacío en simultáneo. 
   Para B se utiliza la fórmula de PP1 donde $p(0) = 1-\rho = 1- \frac{16}{29} = \frac{13}{29} $
-  $$ p(0)_a . p(0)_b . p(0)_c = \frac{5}{29} .\frac{13}{29} . \frac{9}{209} = \frac{585}{175769} \simeq 0,003 $$
+  $$ p(0)_a . p(0)_b . p(0)_c = \frac{5}{29} .\frac{13}{29} . \frac{841}{3181} = \frac{65}{3181} \simeq 0,020 $$
 
 \paragraph{Ejercicio 8}
    Para modelar el sistema presentado en este ejercicio, se plantean las siguientes hipótesis:
