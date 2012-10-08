@@ -22,6 +22,83 @@
 \maketitle
 
 %%%% Poner el enunciado aca.. y un indice %%%%
+\paragraph{Ejercicio 1}
+  \paragraph{Datos}
+    \begin{itemize}
+      \item Demanda: $d = 1000u/\anio$
+      \item Costo unitario: $b = 40\$/u$
+      \item Costo de setup: $K = 4000\$$ 
+      \item Costo de almacenamiento: $C_1 = 540\$/u * \anio$
+      \item Lead time: $LT = 2dias$
+      \item Período: $T = 1\anio$
+    \end{itemize}
+
+  \paragraph{1.a}
+    El modelo utilizado para representar el sistema planteado es el modelo básico con stock de reorden. Las hipótesis asumidas para ello son:
+    \begin{itemize}
+      \item Se administra sólo un producto.
+      \item La demanda es conocida y constante.
+      \item La demanda es independiente de otras variables.
+      \item La reposición es instantánea.
+      \item No se admite déficit del producto.
+      \item El producto se mide en unidades contínuas.
+      \item El horizonte de planeamiento es a largo plazo.
+      \item No hay inflación.
+      \item El costo de setup es independiente del tamaño del lote.
+      \item El costo de almacenamiento es independiente del stock.
+    \end{itemize}
+
+  \paragraph{1.b}
+        $$ q_o = \sqrt{ \frac{2KD}{TC_1}} $$
+        $$ q_o = \sqrt{ \frac{2 \cdot 4000\$ \cdot 12000u/\anio}{540\$/u\cdot\anio}} $$
+        $$ q_o = \sqrt{ \frac{96000000u^2}{540}} $$
+        $$ \boxed{ q_o \simeq 421.63u} $$
+
+  \paragraph{1.c}
+	Dado que la fábrica tiene 20 días laborables al mes, al cabo de un año se acumulan $20 dia/mes \cdot 12 mes/\anio = 240 dia/\anio$.
+        $$ \frac{T}{t_i} = \frac{D}{q} \Rightarrow t_i = \frac{Tq}{D} $$
+        $$ t_i \simeq \frac{421.63u}{12000u/\anio} \simeq 0.0351\anio $$
+        $$ \boxed{ t_i = 0.0351anio \cdot 240dia/\anio \simeq 8.43dias } $$
+
+  \paragraph{1.d}
+        $$ CTE_o = bD + \sqrt{ 2KDTC_1 } $$
+        $$ CTE_o = 40\$/u \cdot 12000u/\anio + \sqrt{ 2 \cdot 4000\$ \cdot 12000u/\anio \cdot 540\frac{\$}{u\cdot\anio} } $$
+        $$ CTE_o \simeq 480000\$/\anio + 227684\$/\anio $$
+        $$ \boxed{ CTE_o \simeq 707684\$/\anio } $$
+
+  \paragraph{1.e}
+        $$ n = \frac{D}{q} \simeq \frac{12000u}{421.63u} $$
+        $$ \boxed{ n \simeq 28.46 } $$
+
+  \paragraph{1.f}
+        $$ SR = LT \cdot d = \frac{2 dias}{240dias/\anio} \cdot  12000u/\anio $$
+        $$ \boxed{ SR \simeq 100u } $$
+
+  \paragraph{1.g}
+	Para lograr que no quede stock remanente al finalizar el año, $n$ debe ser una cantidad entera, de manera que el último lote se acabe al finalizar este período.
+
+	Los números enteros más cercanos al $n$ óptimo son $n_1 = 28$ y $n_1 = 29$.
+
+	El procedimiento a seguir es obtener el $CTE$ para cada valor de $n$ y elegir el menor.
+
+	\subparagraph{n = 28}
+	$$ n = D / q $$
+	$$\Rightarrow q_1 = D / n = 12000u/28 \simeq 428.57u $$
+
+        $$ CTE_1 = b D + q_1 C_1 T / 2 + K D / q_1 $$
+        $$ CTE_1 \simeq 40\$/u \cdot 12000u/\anio + \frac{1}{2} 428.57u \cdot 540\frac{\$}{u\cdot\anio} + \frac{4000\$ \cdot 12000u/\anio}{428.57u} $$
+        $$ CTE_1 \simeq 707714 \$/\anio $$
+
+	\subparagraph{n = 29}
+	$$ n = D / q $$
+	$$\Rightarrow q_2 = D / n = 12000u/29 \simeq 413.79u $$
+
+        $$ CTE_2 = b D + q_2 C_1 T / 2 + K D / q_2 $$
+        $$ CTE_2 \simeq 40\$/u \cdot 12000u/\anio + \frac{1}{2} 413.79u \cdot 540\frac{\$}{u\cdot\anio} + \frac{4000\$ \cdot 12000u/\anio}{413.79u} $$
+        $$ CTE_2 \simeq 707724 \$/\anio $$
+
+        Puede verse que $CTE_1 < CTE_2$, por lo tanto $ \boxed{ n = 28 } $
+
 
 \paragraph{Ejercicio 3}
 
@@ -108,8 +185,6 @@ un costo de almacenamiento anual $ C_1 = \$540 $ y ademas un costo de agotamient
   $$\boxed{t_2 = 0.0080 \anio} $$
   
  
-
-
 \paragraph{Ejercicio 4}
     Los datos proporcionados son la demanda anual $ D = 20000 u $, el costo de setup $ K = \$6000 $, el costo de almacenamiento $ C_1 = \$20\ u^{-1}\ \anio^{-1} $ y la tasa de producción $ p = 5000u\ mes^{-1} = 60000u\ \anio^{-1}$.
 
