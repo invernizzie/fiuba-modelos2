@@ -22,6 +22,94 @@
 \maketitle
 
 %%%% Poner el enunciado aca.. y un indice %%%%
+
+\paragraph{Ejercicio 3}
+
+Los datos proporcionados en el ejercicio son los mismos que los del Ejercicio 1; es decir:
+Demanda anual = $ D = 12000 u $, un lead time $ LT = 0.5479 \anio $, un costo de adquisici\'on $ b = \$40 u^{-1} $, un costo de emisi\'on de orden de compra $ k = \$4000 $, 
+un costo de almacenamiento anual $ C_1 = \$540 $ y ademas un costo de agotamiento $ C_2 = \$2100 u^{-1}\anio^{-1} $
+
+  \paragraph{3.a}
+   El modelo elegido para la resoluci\'on de este problema, es el {\bf Modelo b\'asico con agotamiento}. A continuaci\'on se enuncian las hip\'otesis de dicho modelo:
+
+  \begin{itemize}
+   \item Se administra un \'unico item o producto.
+   \item La demanda del producto es independiente.
+   \item La demanda es conocida y constante.
+   \item La reposici\'on es instantanea.
+   \item El plazo de entrega es conocido y constante.
+   \item No hay stock de protecci\'on.
+   \item Tanto b como k como $ C_1 $ son independientes de la cantidad a pedir.
+   \item No hay restricciones que limiten la cantidad del lote a pedir.
+   \item El producto se mide en unidades continuas.
+   \item El horizonte de planeamiento es a largo plazo.
+  \end{itemize}
+
+  \paragraph{3.b}
+  Para determinar el tama\~no del lote optimo de compra se calcula $ q_o $:
+  
+  $$ q_o = \sqrt{\frac{2 \cdot K \cdot D}{T \cdot C_1}} \cdot \sqrt{\frac{C_1 + C_2}{C_2}} $$
+  
+  $$q_o = \sqrt{\frac{2 \cdot \$4000  \cdot 12000 u \anio^{-1}}{1 \anio \cdot \$540 u^{-1}\anio^{-1}}} \cdot \sqrt{\frac{\$540 u^{-1}\anio^{-1} + \$2100 u^{-1}\anio^{-1}}{\$2100 u^{-1}\anio^{-1}}} $$
+
+  $$q_o = 421.637 u \cdot 1.121 $$
+
+  $$ \boxed{ q_o = 472.66 u } $$
+
+  \paragraph{3.c}
+  Para calcular el tiempo de reaprovisionamiento entre dos intervalos sucesivos se calcula $t_i$. Utilizando que: $ \frac{D}{q_o} = \frac{T}{t_i} $
+
+  $$t_i = \frac{q_o}{D} $$
+  $$t_i = \frac{472.66 u}{12000 u \anio^{-1}} $$
+  $$\boxed{t_i = 0.03938 \anio} $$
+
+  \paragraph{3.d}
+  Para calcular el costo total esperado \'optimo anual, se utiliza que:
+
+  $$CTE_o = b \cdot D + \sqrt{2 \cdot K \ cdot D \cdot T \cdot C_1} \cdot \sqrt{\frac{C_2}{C_1 + C_2}} $$
+  $$CTE_o = \$40 u^{-1} \cdot 12000 u \anio^{-1} + \sqrt{2 \cdot \$4000 \cdot 12000 u \anio^{-1} \cdot 1 \anio \cdot \$540 u^{-1}\anio^{-1} } \cdot \sqrt{\frac{\$2100 u^{-1}\anio^{-1}}{\$540 u^{-1}\anio^{-1} + \$2100 u^{-1}\anio^{-1}}} $$
+  $$CTE_o = \$480000 + 227683.99 \cdot 0.89188 $$ 
+  $$\boxed{CTE_o = \$683066.78}$$
+
+  \paragraph{3.e}
+  Para calcular el n\'umero de pedidos que habr\'a que realizar en un a\~no se calcula:
+  $$n = \frac{D}{q_o} $$
+  $$n = \frac{12000 u \anio^{-1}}{472.66 u} $$
+  $$\boxed{n = 25.388 ordenes \anio^{-1}} $$
+
+  \paragraph{3.f}
+  La cantidad m\'axima de unidades a mantener en stock se calcula como:
+  $$S_o = \sqrt{\frac{2 \cdot K \cdot D}{T \cdot C_1}} \cdot \sqrt{\frac{C_2}{C_1 + C_2}} $$
+  $$S_o = \sqrt{\frac{2 \cdot \$4000 \cdot 12000 u \anio^{-1}}{1 \anio \cdot \$540 u^{-1}\anio^{-1} }} \cdot \sqrt{\frac{\$2100 u^{-1}\anio^{-1}}{\$540 u^{-1}\anio^{-1} + \$2100 u^{-1}\anio^{-1}}} $$
+  $$\boxed{S_o = 376.05 u} $$
+
+  \paragraph{3.g}
+  Para calcular la cantidad m\'axima de unidades agotadas se utiliza que:
+  $$S_a = q_o - S_o $$
+  $$S_a = 472.66 u - 376.05 u $$
+  $$\boxed{S_a = 96.61 u } $$
+
+ \paragraph{3.h}
+ El stock de reorden, considerando 20 dias laborales por mes, se calcula como:
+  
+ $$S_r = LT \cdot d - (q_o - S_o) $$
+ $$S_r =  \frac{2dias \cdot 12000 u \anio^{-1}}{\frac{\anio}{240 dias}} - ( 472.66 u - 376.05 u) $$
+ $$\boxed{S_r = 3.39 u} $$
+
+  \paragraph{3.i}
+  Para calcular lo pedido, se calculan $t_1$ y $t_2$ siendo $t_1$ el tiempo durante el cual se satisface la demanda y $t_2$ el tiempo durante el cual hay d\'eficit de producci\'on.
+
+  $$t_1 = \frac{S_o \cdot t_i}{q_o} $$
+  $$t_1 = \frac{376.05 u \cdot 0.03938 \anio}{472.66 u} $$
+  $$\boxed{t_1 = 0.0313 \anio}$$
+
+  $$t_2 = \frac{(q_o - S_0) \cdot t_i}{q_o} $$
+  $$t_2 = \frac{(472.66 u - 376.05) u \cdot 0.03938 \anio}{472.66 u} $$
+  $$\boxed{t_2 = 0.0080 \anio} $$
+  
+ 
+
+
 \paragraph{Ejercicio 4}
     Los datos proporcionados son la demanda anual $ D = 20000 u $, el costo de setup $ K = \$6000 $, el costo de almacenamiento $ C_1 = \$20\ u^{-1}\ \anio^{-1} $ y la tasa de producción $ p = 5000u\ mes^{-1} = 60000u\ \anio^{-1}$.
 
