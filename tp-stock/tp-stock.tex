@@ -309,7 +309,7 @@ un costo de almacenamiento anual $ C_1 = \$540 $ y ademas un costo de agotamient
         $$ \boxed{S_R = 166.\overline{6} u} $$
 
 
-\paragraph{Ejercico 5}
+\paragraph{Ejercicio 5}
 Los datos proporcionados son: $P = 6307200 m^3 \anio^{-1} $, $b = \$2 m^{-3} $, $k = \$6 $ y $C_1 = 0.1 \cdot b = 0.1 \cdot \$2 m^{-3} = \$0,2 m^{-3}mes^{-1} = \$2.4 m^{-3}\anio^{-1} $. \\
 Se supone $T = 1 \anio$
   \paragraph{5.a}
@@ -355,6 +355,44 @@ Se supone $T = 1 \anio$
   $$\boxed{CTE_o = \$12627877.66 \anio^{-1}} $$
 
 
+
+\pagebreak
+
+\paragraph{Ejercicio 6}
+	Este problema corresponde al modelo básico, pero con la aplicación de una ley de precios de adquisición. Para encontrar el costo total esperado mínimo, no es posible utilizar simplemente la expresión de lote óptimo del modelo básico, ya que dependiendo del tamaño del lote el precio de adquisición varía.
+
+	\subparagraph{} Según la ley de precios, habrá un lote óptimo para cada precio de adquisición. Es fácil verlo si se expresa el costo de almacemaniento descomponiéndolo como $C_1 = C_1^{'} + b_i\ I$, donde $C_1^{'}$ es el costo de almacenamiento físico, y el otro término representa el capital inmovilizado por unidad, siendo $I$ la tasa de interés aplicada. De este manera el lote óptimo para el precio de adquisición $ i $ resulta:
+	$$ q_{oi} = \sqrt{ \frac{2KD}{T \left( C_1^{'} + b_i\ I \right)} } $$
+
+	\subparagraph{} Dado que $b_1 > b_2 > b_3$ y que $q_o \sim \sqrt b$ (función monótonamente creciente), se deduce fácilmente que $q_{o1} < q_{o2} < q_{o3}$. De la misma manera tendremos distintas expresiones para el costo total esperado óptimo según el precio de adquisición:
+	$$ CTE_{oi} = b_iD + \sqrt{ 2KDT \left( C_1^{'} + b_i\ I \right) } $$
+
+	\subparagraph{} Aquí se puede observar que $CTE_{oi} \sim b_i$, por lo tanto $CTE_{o1} > CTE_{o2} > CTE_{o3}$.
+
+	\subparagraph{} Sabiendo esto, podemos proceder a la búsqueda del costo total esperado óptimo para esta ley de precios comenzando por el lote óptimo que resultará en el menor $CTE_o$, es decir $q_{o3}$. Una vez calculado según la fórmula presentada anteriormente, debemos verificar que el tamaño del lote cumpla la restricción de la ley de precios, es decir $q_{o3} \geq Q_2$. De hacerlo, está asegurado que no hay un tamaño de lote que resulte en un $CTE$ menor a $CTE_{o3}$. Estamos ante la siguiente situación:
+
+	\begin{center}
+	\includegraphics[scale=0.4,keepaspectratio=true]{img/6/6_CTE_3.png} 
+	\end{center}
+
+	\subparagraph{} En caso de que $q_{o3} < Q_2$, debemos continuar por calcular $q_{o2}$. Si se encuentra dentro de su restricción $q_{o2} \geq Q_1$, se debe comparar el $CTE_{o2}$ con el límite del precio $b_3$ para ver cuál resulta menor. Se define
+	$$ CTE(q,b) = bD + \frac{q \left( C_1^{'} + b\ I \right) T}{2} + \frac{KD}{q} $$
+
+	\subparagraph{} Es decir el $CTE$ del modelo básico evaluado en el tamaño de lote $q$ y el precio de adquisición $b$. Si $CTE(Q_2, b_3) \leq CTE_{o2}$ entonces $q_o = Q_2$, y estamos ante la siguiente situación:
+
+	\subparagraph{Insertar imágen}
+
+	\subparagraph{} Si por el contrario $CTE(Q_2, b_3) > CTE_{o2}$ entonces $q_o = q_{o2}$, y estamos ante la siguiente situación:
+
+	\subparagraph{Insertar imágen}
+
+	\subparagraph{} Sin embargo, si $q_{o2} < Q_1$, es decir que no cumple su restricción, debemos pasar a calcular $ q_{o1} $. Se encontrará sin duda dentro de su restricción, pero de todas maneras debemos comparar el $CTE_{o1}$ contra $CTE(Q_1, b_2)$ y $CTE(Q_2, b_3)$. Se presentan a continuación situaciones en las que cada uno es el menor.
+
+	\subparagraph{$\mathbf{CTE_o = CTE_{o1}}$} \textbf{Insertar imágen}
+
+	\subparagraph{$\mathbf{CTE_o = CTE(Q_1, b_2)}$} \textbf{Insertar imágen}
+
+	\subparagraph{$\mathbf{CTE_o = CTE(Q_2, b_3)}$} \textbf{Insertar imágen}
 
 \pagebreak
 
