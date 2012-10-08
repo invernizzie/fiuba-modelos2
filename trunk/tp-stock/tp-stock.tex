@@ -308,6 +308,45 @@ un costo de almacenamiento anual $ C_1 = \$540 $ y ademas un costo de agotamient
         $$ S_R = \frac{2\ dias \cdot 20000u}{\anio} \cdot \frac{\anio}{240\ dias} = \frac{2 \cdot 20000u}{240} = \frac{2000u}{12} $$
         $$ \boxed{S_R = 166.\overline{6} u} $$
 
+
+\paragraph{Ejercico 5}
+Los datos proporcionados son: $P = 6307200 m^3 \anio^{-1} $, $b = \$2 m^{-3} $, $k = \$6 $ y $C_1 = 0.1 \cdot b = 0.1 \cdot \$2 m^{-3} = \$0,2 m^{-3}mes^{-1} = \$2.4 m^{-3}\anio^{-1} $. \\
+Se supone $T = 1 \anio$
+  \paragraph{5.a}
+  Se trata de un caso de {\bf Modelo de Producci\'on constante}. Las hip\'otesis del modelo son:
+ \begin{itemize}
+  \item La producci\'on es constante.
+  \item La demanda es instantanea.
+ \end{itemize}
+
+  \paragraph{5.b}
+  Para dimensionar el tanque de forma tal de minimizar los costos se calcula $q_o$
+  
+  $$q_o = \sqrt{\frac{2 \cdot K \cdot P}{T \cdot C_1}}$$
+  $$q_o = \sqrt{\frac{2 \cdot \$6 \cdot 6307200 m^3 \anio^{-1}}{1 mes \cdot \$2.4 m^{-3}\anio^{-1}}} $$
+  $$\boxed{q_o = 5615.69 m^3} $$
+
+  \paragraph{5.c}
+  Para calcular cuantas descargas se har\'an al a\~no se calcula $n$:
+  $$n = \frac{P}{q_o} $$
+  $$n = \frac{6307200 m^3 \anio^{-1}}{5615.69 m^3} $$
+  $$\boxed{n = 1123.138 mes^{-1}} $$
+
+  \paragraph{5.d}
+  Para calcular el stock de reorden se utiliza:
+  $$S_r = LT \cdot P $$
+  $$S_r = 10 hora \cdot \frac{\anio}{8760 hora} \cdot  6307200 m^3 \anio^{-1} $$
+  $$\boxed{S_r = 7200 m^3 }$$
+  
+  \paragraph{5.e}
+  Para calcular el costo total esperado \'optimo anual se utiliza:
+
+  $$CTE_o = b \cdot P + \sqrt{2 \cdot K \cdot P \cdot T \cdot C_1} $$
+  $$CTE_o = \$2 m^{-3} \cdot 6307200 m^3 \anio^{-1} + \sqrt{2 \cdot \$6 \cdot 6307200 m^3 \anio^{-1} \cdot 1 \anio \cdot \$2.4 m^{-3}\anio^{-1} }$$
+  $$\boxed{CTE_o = \$12627877.66 \anio^{-1}} $$
+
+
+
 \pagebreak
 
 \paragraph{Ejercicio 7}
