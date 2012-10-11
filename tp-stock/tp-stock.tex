@@ -1,4 +1,5 @@
-\documentclass{article}
+\documentclass[a4paper,10pt]{article}
+\usepackage[a4paper, left=3cm,right=2.5cm]{geometry}
 
 \usepackage[spanish]{babel}
 \selectlanguage{spanish}
@@ -356,7 +357,6 @@ Se supone $T = 1 \anio$
 
 
 
-\pagebreak
 
 \paragraph{Ejercicio 6}
 	Este problema corresponde al modelo básico, pero con la aplicación de una ley de precios de adquisición. Para encontrar el costo total esperado mínimo, no es posible utilizar simplemente la expresión de lote óptimo del modelo básico, ya que dependiendo del tamaño del lote el precio de adquisición varía.
@@ -407,8 +407,6 @@ Se supone $T = 1 \anio$
 	\includegraphics[scale=0.4,keepaspectratio=true]{img/6/6_CTE1_vs_Q2.png} 
 	\end{center}
 
-\pagebreak
-
 \paragraph{Ejercicio 7}
 Se trata de un caso de modelo básico (ver ejercicio 1) de un solo ítem, demanda constante, agotamiento no admitido, donde el costo de almacenamiento $C_{1}$ crece mediante la siguiente ley:
 \begin{center}
@@ -427,16 +425,16 @@ Con lo cual, se deduce la siguiente relacion entre variables:
 El procedimiento a seguir para la búsqueda del costo total esperado mínimo es el siguiente: 
 \begin{enumerate}
  \item si $q_{o1} < Q_1 \Rightarrow CTE_o = CTE_{o1}$ \\
-      \includegraphics[scale=0.5,keepaspectratio=true]{img/7/7_QvsCTE_1.png} 
+      \includegraphics[scale=0.4,keepaspectratio=true]{img/7/7_QvsCTE_1.png} 
  \item sino, si $ q_{o2} < Q_1 \Rightarrow CTE_o = min( CTE(Q_1, C_{12}), CTE(Q_1, C_{11})$ \\
        Se entiende por $CTE(Q_i, C_{1i})$ el costo total esperado \eqref{7_CTE} evaluado en $Q_i$ y $C_{1i}$ \\
-      \includegraphics[scale=0.5,keepaspectratio=true]{img/7/7_QvsCTE_2.png} 
+      \includegraphics[scale=0.4,keepaspectratio=true]{img/7/7_QvsCTE_2.png} 
  \item sino, si $ Q_1 < q_{o2} < Q_2 \Rightarrow CTE_o = min( CTE_{o2}, CTE(Q_1, C_{11})) $ \\
-      \includegraphics[scale=0.5,keepaspectratio=true]{img/7/7_QvsCTE_3.png} 
+      \includegraphics[scale=0.4,keepaspectratio=true]{img/7/7_QvsCTE_3.png} 
  \item sino, si $q_{o3} < Q_1 \Rightarrow CTE_o = min( CTE(Q_2, C_{12}), CTE(Q_2, C_{13}), CTE(Q_1, C_{11})) $ \\
-      \includegraphics[scale=0.5,keepaspectratio=true]{img/7/7_QvsCTE_4.png} 
+      \includegraphics[scale=0.4,keepaspectratio=true]{img/7/7_QvsCTE_4.png} 
  \item sino, $q_{o3} > Q_2 \Rightarrow CTE_o = min(CTE_{o3},CTE(Q_2, C_{12}), CTE(Q_1, C_{11}) ) $ \\
-      \includegraphics[scale=0.5,keepaspectratio=true]{img/7/7_QvsCTE_5.png} 
+      \includegraphics[scale=0.4,keepaspectratio=true]{img/7/7_QvsCTE_5.png} 
  \end{enumerate}
 
 Para cada uno de estos casos, el costo total esperado en función de q está dado por la curva naranja, donde cada $CTE_i$ es válido dentro de su rango. 
@@ -468,19 +466,137 @@ Con lo cual, se deduce la siguiente relacion entre variables:
 El procedimiento a seguir para la búsqueda del costo total esperado mínimo es el siguiente: 
 \begin{enumerate}
  \item si $q_{o1} < Q_1 \Rightarrow CTE_o = CTE_{o1} $ \\
-    \includegraphics[scale=0.5,keepaspectratio=true]{img/8/8_QvsCTE_1.png} 
+    \includegraphics[scale=0.4,keepaspectratio=true]{img/8/8_QvsCTE_1.png} 
  \item sino, si $q_{o2} < Q_2 \Rightarrow CTE_o = min( CTE_{o2}, CTE(Q_1, k_1)) $ \\
       Se entiende por $CTE(Q_i, k_i)$ el costo total esperado \eqref{8_CTE} evaluado en $Q_i$ y $k_i$ \\
-      \includegraphics[scale=0.5,keepaspectratio=true]{img/8/8_QvsCTE_2.png} 
+      \includegraphics[scale=0.4,keepaspectratio=true]{img/8/8_QvsCTE_2.png} 
  \item sino, $q_{o3} > Q_2 \Rightarrow CTE_o = min( CTE_{o3}, CTE(Q_2, k_2), CTE(Q_1, k_1) )$ \\
-      \includegraphics[scale=0.5,keepaspectratio=true]{img/8/8_QvsCTE_3.png} 
+      \includegraphics[scale=0.4,keepaspectratio=true]{img/8/8_QvsCTE_3.png} 
 \end{enumerate}
 
 Dado que cada curva es válida únicamente en un intervalo determinado por k, para cada caso el CTE en función de q está dado por la curva naranja.\\
 \begin{enumerate}
-  \item \includegraphics[scale=0.5,keepaspectratio=true]{img/8/8_QvsCTE_1b.png} 
-  \item \includegraphics[scale=0.5,keepaspectratio=true]{img/8/8_QvsCTE_2b.png} 
-  \item \includegraphics[scale=0.5,keepaspectratio=true]{img/8/8_QvsCTE_3b.png} 
+  \item \includegraphics[scale=0.4,keepaspectratio=true]{img/8/8_QvsCTE_1b.png} 
+  \item \includegraphics[scale=0.4,keepaspectratio=true]{img/8/8_QvsCTE_2b.png} 
+  \item \includegraphics[scale=0.4,keepaspectratio=true]{img/8/8_QvsCTE_3b.png} 
 \end{enumerate}
+
+\paragraph{Ejercicio 9}
+  \paragraph{Datos} 
+
+    \begin{tabular}{|| c | c | c ||}
+    \hline 
+				& A & B	\\ \hline \hline
+     Demanda: $[D] = u/mes$ & 1500 & 2000	\\ \hline
+     Costo de adquisición: $[b] = \$/u$ & 150 & 100 	\\ \hline
+     Costo de orden de compra: $[k] = \$$  & 500 & 500 \\ \hline
+     Tasa de inmovilización mensual: $[i] = \%/mes$   & 2 & 2 \\ \hline
+     Superficie ocupada de almacén: $[s_i] = m^2/u$  & 0,1 & 0,6 \\ \hline     
+    \end{tabular}
+
+    \begin{itemize}
+      \item Superficie disponible de almacén: $V = 450 m^2$
+      \item Cantidad máxima de dinero a inmovilizar en stock: $TI = 145800\$$ 
+      \item Período: $T = 1 mes$
+ \item  El costo operativo (alquileres, seguros, etc) se supone 0. $ C_{1i} = b_i i $
+    \end{itemize}
+
+    El modelo utilizado para representar el sistema planteado es el modelo para varios items con retricción de superficie de
+almacenamiento. Las hipótesis asumidas para ello son:
+    \begin{itemize}
+      \item La demanda es conocida y constante.
+      \item La demanda es independiente de otras variables.
+      \item La reposición es instantánea.
+      \item No se admite déficit del producto.
+      \item El plazo de entrega es conocido y constante.
+      \item No hay stock de protección.
+      \item El producto se mide en unidades contínuas.
+      \item El horizonte de planeamiento es a largo plazo.
+      \item No hay inflación.
+      \item Tanto b como k como $C_1$ son independientes del tamaño del lote.
+    \end{itemize}
+
+        \\
+Restricción:      $ \sum_{i=1}^{2} v_i q_i <= V $  \\
+ 	
+CTE a minimizar: $ CTE = \sum_{i=1}^{2} b_i D_i + \frac{k_i D_i}{q_i} + \frac{1}{2} T C_{1i} q_i $ \\
+
+Aplicando multiplicadores de Lagrange:
+
+	$$ L = \phi(q_1,q_2,\lambda) = \sum_{i=1}^{2} b_i D_i + \frac{k_i D_i}{q_i} + \frac{1}{2} T C_{1i} q_i +
+	\lambda ( \sum_{i=1}^{2} v_i q_i - V ) $$
+
+En el punto óptimo:
+$$\frac{\partial L } {\partial q_i }   = -  \frac{ k_i D_i}{q_i^2}  + \frac{1}{2} T C_{1i} + \lambda v_i = 0$$
+
+$$ \frac{ k_i D_i}{q_i^2} = \frac{1}{2} T C_{1i} + \lambda v_i $$
+
+$$ q_i = \sqrt{ \frac{2K_i D_i}{TC_{1i} + 2 \lambda v_i}} $$
+
+$$\frac{\partial L } {\partial \lambda }   = \sum_{i=1}^{2} v_i q_i - V  = 0$$
+
+
+
+
+$$ q_1 = \sqrt{ \frac{2\cdot 500 \$\cdot 1500 u/mes }{1 mes \cdot 150 \$/u\cdot 0,02 + 2\cdot \lambda \cdot 0,1}} $$
+
+$$ q_2 = \sqrt{ \frac{2\cdot 500 \$ \cdot2000 u/mes }{1 mes \cdot 100 \$/u \cdot 0,02 + 2 \cdot \lambda \cdot 0,6}} $$
+
+Método iterativo:\\ 
+    \begin{tabular}{|| c | c | c | c ||}
+    \hline 
+      $\lambda_n$ & $q_1$ & $q_2$ &  	$0,1 q_1 + 0,6 q_2 <= 450 $\\ \hline \hline
+     0 & 707,1 & 1000 & 670,7	\\ \hline
+     1 & 684,65 & 790,6 & 542,8	\\ \hline
+     2 & 664,2 & 674,2               &  471 \\ \hline
+3 & 645,5 & 597,6               & 405.1  \\ \hline     
+     2.25 & 659,38 & 652,3               &  457,3 \\ \hline
+     2.5 & 654,65 & 632,5               &  445 \\ \hline
+     2.3 & 658,4 & 648,2               &  454,8 \\ \hline 
+     2.35 & 657,5 & 644,2               &  452,3 \\ \hline 
+     2.4 & 656,5 & 640,2               &  449.8 \\ \hline 
+    \end{tabular}
+\\ \\ 
+Por lo tanto, el lote para el producto A es de 656,5 unidades y el lote para el producto B es de 640,2 unidades.
+
+\paragraph{Ejercicio 10}
+    El modelo utilizado para representar el sistema planteado es el modelo para varios items con retricción en la 
+cantidad máxima de dinero a inmovilizar en stock. Las hipótesis son las mismas que en el ejercicio anterior.  \\
+
+ Restricción:  $ \frac{1}{2} \sum_{i=1}^{2} b_i q_i <= TI $ 
+
+CTE a minimizar: $ CTE = \sum_{i=1}^{2} b_i D_i + \frac{k_i D_i}{q_i} + \frac{1}{2} T C_{1i} q_i $ \\
+
+Aplicando multiplicadores de Lagrange:
+	$$ L = \phi(q_1,q_2,\lambda) = \sum_{i=1}^{2} b_i D_i + \frac{k_i D_i}{q_i} + \frac{1}{2} T C_{1i} q_i +
+	\lambda ( \frac{1}{2} \sum_{i=1}^{2} b_i q_i - TI ) $$
+
+En el punto óptimo:
+$$\frac{\partial L } {\partial q_i }   = -  \frac{ k_i D_i}{q_i^2}  + \frac{1}{2} T C_{1i} + \frac{1}{2} \lambda b_i = 0$$
+
+$$ \frac{ k_i D_i}{q_i^2} = \frac{1}{2} T C_{1i} + \frac{1}{2}  \lambda b_i $$
+
+$$ q_i = \sqrt{ \frac{2K_i D_i}{TC_{1i} +  \lambda b_i}} $$
+
+$$\frac{\partial L } {\partial \lambda }   = \frac{1}{2} \sum_{i=1}^{2} b_i q_i - TI = 0$$
+
+
+
+
+$$ q_1 = \sqrt{ \frac{2\cdot 500 \$\cdot 1500 u/mes }{1 mes \cdot 150 \$/u \cdot 0,02 + \lambda \cdot 150\$/u}} $$
+
+$$ q_2 = \sqrt{ \frac{2\cdot 500 \$ \cdot2000 u/mes }{1 mes \cdot 100 \$/u \cdot 0,02 + \lambda  \cdot 100\$/u}} $$
+
+Método iterativo:\\
+    \begin{tabular}{|| c | c | c | c ||}
+    \hline 
+      $\lambda_n$ & $q_1$ & $q_2$ &  	$75 q_1 + 50 q_2 <= 145800 $\\ \hline \hline
+     0 & 707,1 & 1000 & 103032,5	\\ \hline
+%     1 & 99 & 140	 & 14425	\\ \hline
+%     2 & 70 & 99,5               &  471 \\ \hline
+
+    \end{tabular}
+\\ \\ 
+Por lo tanto, la restricción no restringe y los lotes de ambos productos son óptimos. El lote para el producto A es de 707,1 unidades y el lote para el producto B es de 1000 unidades.
 
 \end{document}
