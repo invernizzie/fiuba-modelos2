@@ -10,4 +10,5 @@ do
 		pdflatex tp-colas.tex
 		LAST_DATE="$DATE"
 	fi
+	sleep 3
 done
