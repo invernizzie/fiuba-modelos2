@@ -1,0 +1,31 @@
+digraph g {
+  node [shape=record]; /* Nodos con campos */
+  node [style=rounded];
+  rankdir=LR; /* Orientación del grafo */
+
+  /* Estados */
+  node1[label="{1|{0|0}}"];
+  node2[label="{2|{2|2}}"];
+  node3[label="{3|{9|9}}"];
+  node4[label="{4|{9|12}}"];
+  node5[label="{5|{9|12}}"];
+  node6[label="{6|{13|13}}"];
+  node7[label="{7|{12|15}}"];
+  node8[label="{8|{21|21}}"];
+  node9[label="{9|{24|24}}"];
+
+  /* Tareas */
+  node1 -> node2 [label="A 2", penwidth=4.0];
+  node2 -> node3 [label="B 7", penwidth=4.0];
+  node2 -> node4 [label="C 7"];
+  node2 -> node5 [label="D 4"];
+  node3 -> node6 [label="E 4", penwidth=4.0];
+  node3 -> node6 [label="G 4", penwidth=4.0];
+  node4 -> node5 [style=dotted];
+  node4 -> node9 [label="I 3"];
+  node5 -> node7 [label="F 3"];
+  node6 -> node8 [label="H 8", penwidth=4.0];
+  node7 -> node8 [style=dotted];
+  node7 -> node9 [label="K 9"];
+  node8 -> node9 [label="J 3", penwidth=4.0];
+}
