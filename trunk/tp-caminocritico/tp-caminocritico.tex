@@ -97,12 +97,21 @@
   \subparagraph {4.a} El camino crítico esta dado por las tareas A-D-E-F-G y tiene una duración total de 11 días. El desvío....... %TODO%
   \subparagraph {4.b} %TODO%
   \subparagraph {4.c} %TODO%
-  \subparagraph {4.d} Para este proyecto, se tiene el siguiente diagrama de fechas tempranas: 
+  \subparagraph {4.d} Para este proyecto, se tiene el siguiente diagrama de fechas tempranas, considerando los costos de las tareas, contabilizandolos al finalizar las mismas. 
     \begin{center}
     \includegraphics[scale=0.55,keepaspectratio=true]{img/ej4-fechatemprana.png} 
   \end{center}
+  El valor actual del proyecto se calcula como $\sum _{n=1}^{11} {\frac{\$_n}{(1+i)^n}}$ donde $ \$$ es el costo de la tarea, $i$ es el interés, y $n$ es el día de finalización de la tarea.\\
+  Para una tasa diaria del 0,5\% se tiene un $i=0,005$.
+  $$VAN = \sum _{n=1}^{11} {\frac{\$_n}{(1,005)^n}}$$
+  $$VAN = \frac{\$100}{(1,005)^3} + \frac{\$200}{(1,005)^4} + \frac{\$250}{(1,005)^5} + \frac{\$150}{(1,005)^7} + \frac{\$200}{(1,005)^9} + \frac{\$200}{(1,005)^{10}} + \frac{\$150}{(1,005)^{11}}$$
+  $$VAN = \$1223,21$$
   
-  %TODO VAN%
+  Para calcular el importe a pagar el día 8, se utilizará la fórmula $\frac{\$}{(1+i)^n} $ para calcular el importe de fechas futuras, y $ \$ . (1+i)^n $ para los importes de fechas pasadas,
+  donde $ \$$ es el costo de la tarea, $i$ es el interés, y $n$ es la diferencia de días desde la finalización de la tarea y el día 8.\\
+    Con lo cual, el importe a pagar el día 8 es: \\ \\
+  $Dia 8 = \$100(1+0,005)^5 + \$200 (1+0,005)^4 + \$250(1+0,005)^3 + \$150(1+0,005)^1 + \frac{\$200}{(1+0,005)^1} + \frac{\$200}{(1+0,005)^2} + \frac{\$150}{(1+0,005)^3} $ \\
+  $Dia 8 = \$ 1255,87$
   
   \subparagraph {4.e} En el caso de que la tarea G no pueda iniciarse hasta el día 13, dado que G es una tarea crítica, se debera retrasar el inicio del proyecto 3 días. 
   La duración total del proyecto continúa siendo de 11 días, solo que se corre el inicio. Se representa esta modificación en el siguiente gráfico.
@@ -118,7 +127,7 @@
   \end{center}
   
   Se resaltan los días 5 y 6 en donde se supera la capacidad máxima. Para adaptarse a la restricción, se decidió retrasar el inicio de la tarea H, 
-  dado que ésta tiene un márgen de tiempo suficiente para evitar usar mas de 30 metros cúbicos por día.
+  dado que ésta tiene un márgen de tiempo suficiente para evitar que se superponga con E que es una tarea crítica que usa al máximo los recursos disponibles.
   \begin{center}
     \includegraphics[scale=0.55,keepaspectratio=true]{img/ej4-fechatemprana2.png} 
   \end{center}
