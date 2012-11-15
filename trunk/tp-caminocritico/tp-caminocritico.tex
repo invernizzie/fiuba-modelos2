@@ -21,6 +21,12 @@
 	\includegraphics[scale=0.55,keepaspectratio=true]{img/ej1-red.png} 
 	\end{center}
   
+  
+  
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   
+   
+   
 \paragraph{Ejercicio 3}
   Para encontrar el camino crítico, se obtiene el grafo de tareas representado por la matriz de precedencia y, sobre el mismo, se ejecuta el algoritmo de búsqueda de camino crítico.
 
@@ -80,8 +86,46 @@
 
   El costo de reducir en una semana E es de $\$200$, y el de G es de $\$300$, por lo que no conviene si el beneficio percibido es de $\$150$ en total ya que el nuevo costo llegaría a ser de $\$14540 + \$200 + \$300 - \$150 = \$14890$, siendo mayor que el original del proyecto.
 
+  
+  %%%%%%%%%%%%%%%%%%%
+  
+\paragraph{Ejercicio 4} Utilizando la tabla que indica la precedencia entre tareas. La duración de cada tarea se calcula mediante la fórmula $\frac{a + 4m + b}{6}$. El camino crítico se resalta con flechas más gruesas.
+   \begin{center}
+    \includegraphics[scale=0.5,keepaspectratio=true]{img/ej4-1.png} 
+  \end{center}
+  
+  \subparagraph {4.a} El camino crítico esta dado por las tareas A-D-E-F-G y tiene una duración total de 11 días. El desvío....... %TODO%
+  \subparagraph {4.b} %TODO%
+  \subparagraph {4.c} %TODO%
+  \subparagraph {4.d} Para este proyecto, se tiene el siguiente diagrama de fechas tempranas: 
+    \begin{center}
+    \includegraphics[scale=0.55,keepaspectratio=true]{img/ej4-fechatemprana.png} 
+  \end{center}
+  
+  %TODO VAN%
+  
+  \subparagraph {4.e} En el caso de que la tarea G no pueda iniciarse hasta el día 13, dado que G es una tarea crítica, se debera retrasar el inicio del proyecto 3 días. 
+  La duración total del proyecto continúa siendo de 11 días, solo que se corre el inicio. Se representa esta modificación en el siguiente gráfico.
+  \begin{center}
+    \includegraphics[scale=0.5,keepaspectratio=true]{img/ej4-e.png} 
+  \end{center}
+  
+  \subparagraph {4.f} Teniendo en cuenta el Diagrama de fecha temprana, se indica el requerimiento de metros cúbicos por día (con un número arriba de cada día del calendario). 
+  En línea punteada se indican los márgenes de tiempo, dado que la tarea en cuestión no es crítica y su fecha tardía es mayor que su fecha temprana.
+  
+  \begin{center}
+    \includegraphics[scale=0.55,keepaspectratio=true]{img/ej4-fechatemprana1.png} 
+  \end{center}
+  
+  Se resaltan los días 5 y 6 en donde se supera la capacidad máxima. Para adaptarse a la restricción, se decidió retrasar el inicio de la tarea H, 
+  dado que ésta tiene un márgen de tiempo suficiente para evitar usar mas de 30 metros cúbicos por día.
+  \begin{center}
+    \includegraphics[scale=0.55,keepaspectratio=true]{img/ej4-fechatemprana2.png} 
+  \end{center}
 
-
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
 \paragraph{Ejercicio 5}
 
 Para comenzar el ejercicio, se comienza planteando el gr\'afico de la red planteada en el enunciado y se marca con l\'inea m\'as gruesa y roja el camino cr\'itico en cuesti\'on.
