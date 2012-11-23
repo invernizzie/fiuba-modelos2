@@ -102,11 +102,11 @@ Por ello, resulta trivial agregar las tareas ficticias como se muestra a continu
     \includegraphics[scale=0.5,keepaspectratio=true]{img/ej4-1.png} 
   \end{center}
   
-  \subparagraph {4.a} El desvío lo calculamos como $\delta_n = \frac{b_n - a_n}{6}$. Para cada tarea se tiene el siguiente desvío:
+  \subparagraph {4.a} El desvío lo calculamos como $\sigma_n = \frac{b_n - a_n}{6}$. Para cada tarea se tiene el siguiente desvío:
   \begin{center}
    \begin{tabular}{|| c | c ||}
    \hline 
-      Tarea & $\delta$ \\ \hline \hline
+      Tarea & $\sigma$ \\ \hline \hline
       A & 0,333\\ \hline
       B & 0\\ \hline
       C & 0\\ \hline
@@ -118,39 +118,43 @@ Por ello, resulta trivial agregar las tareas ficticias como se muestra a continu
       
    \end{tabular}
    \end{center}
-  Para medir el desvío del proyecto se toma sólo el desvío de las tareas del camino crítico.
-  El camino crítico esta dado por las tareas A-D-E-F-G y tiene una duración total de 11 días y un desvío de 1,3 días. 
+  Para medir el desvío del proyecto, utilizamos la fórmula $ \sigma_{proy}=\sqrt{\sum _{i}^{} \sigma_{CCi}^2 }$ y se toma sólo el desvío de las tareas del camino crítico.
+  $$\sigma_{proy}=\sqrt{\frac{1}{3}^2 + \frac{1}{3}^2 + \frac{2}{3}^2} = \sqrt{\frac{6}{9}} = 0,82$$
+  
+  Entonces, el camino crítico esta dado por las tareas A-D-E-F-G y tiene una duración total de 11 días y un desvío de 0,82 días. 
   
   \subparagraph {4.b} Para estimar una fecha de finalización con el 80\% de probabilidad se utilizará la distribución normal. 
-  $$ P(z \leq z_0) = 0,8 \Rightarrow z_0 \simeq 0,805$$
-  Éste valor se obtiene de buscar la probabilidad en la tabla normal y buscando su valor de z correspondiente. Sabemos que 
-  $$ z_0 = \frac{T_p - 11dias}{\sqrt{1,33dias}} \simeq 0,805 \Rightarrow T_p \simeq 11,93 dias $$
+  $$ P(z \leq z_0) = 0,8 \Rightarrow 0,84 \le z_0 \le 0.85 \Rightarrow z \simeq 0,845$$
+  Éste valor se obtiene de buscar la probabilidad en la tabla normal y buscando su valor de z correspondiente que hace que la distribución acumule 0,8 de probabilidad; 
+  dado que no se encuentra el número exacto, se realizó una estimación del valor de z entre los dos valores más cercanos de probabilidad. Para obtener el tiempo, sabemos que 
+  $$ z_0 = \frac{T_p - \mu}{\sigma_{proy}} = \frac{T_p - 11dias}{0,82} \simeq 0,845 \Rightarrow T_p \simeq 11,69 dias $$
   Donde $T_p$ = Tiempo de proyecto con un 80\% de probabilidad.
-  Por lo tanto, la fecha de finalización del proyecto es de 11,93 días con un 80\% de probabilidad.
+  Por lo tanto, la fecha de finalización del proyecto es de 11,69 días con un 80\% de probabilidad.
   
   \subparagraph {4.c} Usando la distribución normal, podemos calcular la probabilidad de finalizar en 13 días o mas como:
   $$P(z \leq z_0) = P(T_p \leq 13)$$
   Sabiendo que 
-  $$z_0 = \frac{13dias - 11dias}{\sqrt{1,33dias}} = 1,734 $$
+  $$z_0 = \frac{T_p - \mu}{\sigma_{proy}} = \frac{13dias - 11dias}{0,82} = 2,44 $$
   Buscando el valor correspondiente en la tabla de la distribución normal, se obtiene que
-  $$P(z \leq 1,734) \simeq 0,9573 $$
-  Por lo tanto, la probabilidad de terminar el proyecto en 13 días o menos es de un 95,7\%
+  $$P(z \leq 2,44) \simeq 0,99 $$
+  Por lo tanto, la probabilidad de terminar el proyecto en 13 días o menos es de un 99\%
   
   \subparagraph {4.d} Para este proyecto, se tiene el siguiente diagrama de fechas tempranas, considerando los costos de las tareas, contabilizandolos al finalizar las mismas. 
     \begin{center}
     \includegraphics[scale=0.55,keepaspectratio=true]{img/ej4-fechatemprana.png} 
   \end{center}
-  El valor actual del proyecto se calcula como $\sum _{n=1}^{11} {\frac{\$_n}{(1+i)^n}}$ donde $ \$$ es el costo de la tarea, $i$ es el interés, y $n$ es el día de finalización de la tarea.\\
-  Para una tasa diaria del 0,5\% se tiene un $i=0,005$.
-  $$VAN = \sum _{n=1}^{11} {\frac{\$_n}{(1,005)^n}}$$
-  $$VAN = \frac{\$100}{(1,005)^3} + \frac{\$200}{(1,005)^4} + \frac{\$250}{(1,005)^5} + \frac{\$150}{(1,005)^7} + \frac{\$200}{(1,005)^9} + \frac{\$200}{(1,005)^{10}} + \frac{\$150}{(1,005)^{11}}$$
-  $$VAN = \$1223,21$$
+  Si $ \$$ es el costo de la tarea, $i$ es el interés, y $n$ es el día de finalización de la tarea, el valor actual del proyecto se calcula como:
+  $$VAN = \sum _{n=1}^{11} {\frac{\$_n}{(1+i)^n}}$$
+  Se considera negativo dado que todos son costos, es decir, egresos. Para una tasa diaria del 0,5\% se tiene un $i=0,005$.
+  $$VAN = - \sum _{n=1}^{11} {\frac{\$_n}{(1,005)^n}}$$
+  $$VAN = - \left( \frac{\$100}{(1,005)^3} + \frac{\$200}{(1,005)^4} + \frac{\$250}{(1,005)^5} + \frac{\$150}{(1,005)^7} + \frac{\$200}{(1,005)^9} + \frac{\$200}{(1,005)^{10}} + \frac{\$150}{(1,005)^{11}}\right)$$
+  $$VAN = -\$1199,33$$
   
   Para calcular el importe a pagar el día 8, se utilizará la fórmula $\frac{\$}{(1+i)^n} $ para calcular el importe de fechas futuras, y $ \$ . (1+i)^n $ para los importes de fechas pasadas,
   donde $ \$$ es el costo de la tarea, $i$ es el interés, y $n$ es la diferencia de días desde la finalización de la tarea y el día 8.\\
-    Con lo cual, el importe a pagar el día 8 es: \\ \\
-  $Dia 8 = \$100(1+0,005)^5 + \$200 (1+0,005)^4 + \$250(1+0,005)^3 + \$150(1+0,005)^1 + \frac{\$200}{(1+0,005)^1} + \frac{\$200}{(1+0,005)^2} + \frac{\$150}{(1+0,005)^3} $ \\
-  $Dia 8 = \$ 1255,87$
+    Con lo cual, el importe a pagar el día 8 es: 
+  $$Dia 8 = \$100(1,005)^5 + \$200 (1,005)^4 + \$250(1,005)^3 + \$150(1,005)^1 + \frac{\$200}{(1,005)^1} + \frac{\$200}{(1,005)^2} + \frac{\$150}{(1,005)^3} $$
+  $$Dia 8 = \$ 1255,87$$
   
   \subparagraph {4.e} En el caso de que la tarea G no pueda iniciarse hasta el día 13, dado que G es una tarea crítica, se debera retrasar el inicio del proyecto 3 días. 
   La duración total del proyecto continúa siendo de 11 días, solo que se corre el inicio. Se representa esta modificación en el siguiente gráfico.
